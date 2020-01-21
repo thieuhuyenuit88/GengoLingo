@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using deVoid.UIFramework.Utils;
 using deVoid.Utils;
 using UnityEngine;
 
@@ -27,7 +28,8 @@ namespace deVoid.UIFramework.Examples
             Signals.Get<ShowConfirmationPopupSignal>().RemoveListener(OnShowConfirmationPopup);
         }
 
-        private void Start() {
+        private void Start()
+        {
             uiFrame.OpenWindow(ScreenIds.StartGameWindow);
         }
 

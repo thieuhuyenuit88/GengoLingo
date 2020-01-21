@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace deVoid.UIFramework.Examples {
+namespace deVoid.UIFramework.Utils {
     
     
     public sealed class ScreenIds {
@@ -26,6 +26,8 @@ namespace deVoid.UIFramework.Examples {
         public const string PopupExampleWindow = "PopupExampleWindow";
         
         public const string StartGameWindow = "StartGameWindow";
+        
+        public const string TestWindow = "TestWindow";
         
         public const string ThreeDExample = "ThreeDExample";
         
