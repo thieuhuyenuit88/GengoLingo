@@ -1,6 +1,5 @@
 ﻿using deVoid.UIFramework;
 using deVoid.Utils;
-using DG.Tweening;
 using SuperScrollView;
 using System;
 using System.Collections;
@@ -43,18 +42,7 @@ public class TestWindowController : AWindowController
 
         var itemObj = _listview.NewListViewItem("ItemTest");
         var itemData = listItemDatas[_index];
-        itemObj.GetComponentInChildren<Text>().text = itemData.title;
-
-        // scale animation when item created
-        RectTransform rTransform = itemObj.transform as RectTransform;
-        rTransform.localScale = new Vector3(0.02f, 0.02f, 1f);
-
-        rTransform.DOScale(new Vector3(1f, 1f, 1f), 0.25f)
-            .SetEase(Ease.Linear)
-            .SetUpdate(true)
-            .OnComplete(() => {
-
-            });
+        itemObj.GetComponent<ItemListViewController>().SetData(itemData.title);
 
         return itemObj;
     }

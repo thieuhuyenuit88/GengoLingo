@@ -19,7 +19,7 @@ namespace SuperScrollView
     }
     class MenuSceneScript: MonoBehaviour
     {
-        public Transform mButtonPanelTf;
+        public Transform mButtonPanelTf = null;
         SceneNameInfo[] mSceneNameArray = new SceneNameInfo[]
         {
             new SceneNameInfo("Staggered GridView1","StaggeredGridView_TopToBottom"),

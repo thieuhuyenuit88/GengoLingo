@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 2818863584460791390}
   - component: {fileID: 422667887317154571}
   - component: {fileID: 1307850561927095324}
+  - component: {fileID: 8595555237502373599}
   m_Layer: 5
   m_Name: UIFrame
   m_TagString: Untagged
@@ -448,6 +449,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &8595555237502373599
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165930534265230394}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5283807304502250602
 GameObject:
   m_ObjectHideFlags: 0

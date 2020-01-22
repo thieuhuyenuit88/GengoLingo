@@ -61,6 +61,7 @@ namespace deVoid.UIFramework.Editor
             screenScaler.referenceResolution = new Vector2(1080, 1920);
 
             root.AddComponent<GraphicRaycaster>();
+            root.AddComponent<CanvasGroup>();
 
             var eventSystem = new GameObject("EventSystem");
             eventSystem.transform.SetParent(root.transform, false);

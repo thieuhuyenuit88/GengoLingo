@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2406402594689756850}
   - component: {fileID: 7276067244974292949}
   - component: {fileID: 5235723357538291506}
-  - component: {fileID: 4580270613197900205}
+  - component: {fileID: 5293699625138692395}
   - component: {fileID: 2578740249997622977}
   m_Layer: 5
   m_Name: TestWindow
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animIn: {fileID: 5235723357538291506}
-  animOut: {fileID: 4580270613197900205}
+  animOut: {fileID: 5293699625138692395}
   properties:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: c57e754a0613a714584cc84ba36b9850, type: 2}
   playReverse: 0
---- !u!114 &4580270613197900205
+--- !u!114 &5293699625138692395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,11 +82,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2406402594689756849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09bbc675c80bb4a4c81b3a98d595de4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f9739af8e894b7b8db28faf4bb2114d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: c57e754a0613a714584cc84ba36b9850, type: 2}
-  playReverse: 1
+  fadeDuration: 0.5
+  fadeOut: 1
 --- !u!111 &2578740249997622977
 Animation:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2406402595572497207}
   - component: {fileID: 2406402595572497210}
   - component: {fileID: 2406402595572497209}
-  - component: {fileID: 2406402595572497208}
+  - component: {fileID: 8033886371543932830}
   m_Layer: 5
   m_Name: Content(NestedCanvas)
   m_TagString: Untagged
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &2406402595572497208
+--- !u!114 &8033886371543932830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 3297826249628072838}
   - component: {fileID: 1742254535021869295}
   - component: {fileID: 4674317350248732491}
+  - component: {fileID: 5802597143637046998}
   m_Layer: 5
   m_Name: ItemTest
   m_TagString: Untagged
@@ -518,6 +519,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5802597143637046998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396160167185451668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8cb23ec8cb27d43ac640dcc6a46aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleLabel: {fileID: 2502215519304987429}
+  itemBtn: {fileID: 4674317350248732491}
 --- !u!1 &4073279589610387467
 GameObject:
   m_ObjectHideFlags: 0

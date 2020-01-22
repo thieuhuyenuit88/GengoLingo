@@ -27,6 +27,8 @@ namespace deVoid.UIFramework.Utils {
         
         public const string StartGameWindow = "StartGameWindow";
         
+        public const string TestPopup = "TestPopup";
+        
         public const string TestWindow = "TestWindow";
         
         public const string ThreeDExample = "ThreeDExample";

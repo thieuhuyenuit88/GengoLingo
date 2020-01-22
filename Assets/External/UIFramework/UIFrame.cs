@@ -18,6 +18,7 @@ namespace deVoid.UIFramework
 
         private Canvas mainCanvas;
         private GraphicRaycaster graphicRaycaster;
+        private CanvasGroup mainCanvasGroup;
 
         /// <summary>
         /// The main canvas of this UI
@@ -74,6 +75,7 @@ namespace deVoid.UIFramework
             }
 
             graphicRaycaster = MainCanvas.GetComponent<GraphicRaycaster>();
+            mainCanvasGroup = MainCanvas.GetComponent<CanvasGroup>();
         }
 
         /// <summary>
@@ -300,11 +302,22 @@ namespace deVoid.UIFramework
             if (graphicRaycaster != null) {
                 graphicRaycaster.enabled = false;
             }
+
+            if (mainCanvasGroup != null)
+            {
+                mainCanvasGroup.blocksRaycasts = false;
+            }
         }
 
         private void OnRequestScreenUnblock() {
             if (graphicRaycaster != null) {
                 graphicRaycaster.enabled = true;
+                mainCanvasGroup.blocksRaycasts = true;
+            }
+
+            if (mainCanvasGroup != null)
+            {
+                mainCanvasGroup.blocksRaycasts = true;
             }
         }
     }

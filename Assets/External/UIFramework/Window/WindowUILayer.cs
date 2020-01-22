@@ -65,6 +65,8 @@ namespace deVoid.UIFramework
         }
 
         public override void HideScreen(IWindowController screen) {
+            if (CurrentWindow == null) return;
+
             if (screen == CurrentWindow) {
                 windowHistory.Pop();
                 AddTransition(screen);
@@ -87,6 +89,10 @@ namespace deVoid.UIFramework
             }
         }
 
+        /// <summary>
+        /// Hide all window screen
+        /// </summary>
+        /// <param name="shouldAnimateWhenHiding"></param>
         public override void HideAll(bool shouldAnimateWhenHiding = true) {
             base.HideAll(shouldAnimateWhenHiding);
             CurrentWindow = null;
