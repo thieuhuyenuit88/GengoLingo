@@ -45,6 +45,6 @@ public class MainUIController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        mainUIFrame.OpenWindow(ScreenIds.TestWindow);
+        mainUIFrame.OpenWindow(ScreenIds.CategoriesWindow);
     }
 }

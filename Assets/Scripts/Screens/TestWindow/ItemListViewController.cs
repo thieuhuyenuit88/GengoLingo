@@ -6,7 +6,8 @@ using UnityEngine.UI;
 class ItemListViewController: MonoBehaviour
 {
     [SerializeField] Text titleLabel = null;
-    [SerializeField] Button itemBtn = null;
+
+    private TestPopupProperties testPopupData = null;
 
     public void SetData(string _title)
     {
@@ -24,20 +25,15 @@ class ItemListViewController: MonoBehaviour
 
             });
 
-        TestPopupProperties testPopupData = new TestPopupProperties(_title, () =>
+        testPopupData = new TestPopupProperties(_title, () =>
         {
             // Test popup close callback
             // Nothing to do
         });
-
-        itemBtn.onClick.RemoveAllListeners();
-        itemBtn.onClick.AddListener(() => {
-            Signals.Get<TestPopup_ShowSignal>().Dispatch(testPopupData);
-        });
     }
 
-    private void OnDestroy()
+    public void UI_ItemBtn()
     {
-        itemBtn.onClick.RemoveAllListeners();
+        Signals.Get<TestPopup_ShowSignal>().Dispatch(testPopupData);
     }
 }

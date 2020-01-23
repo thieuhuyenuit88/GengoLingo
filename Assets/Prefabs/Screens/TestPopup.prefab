@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 7806316612327557449}
   - component: {fileID: 6506367708631832988}
   - component: {fileID: 7253387092769671204}
-  - component: {fileID: 2957614241359666677}
+  - component: {fileID: 3733596497629740802}
   - component: {fileID: 3562680015335051492}
   m_Layer: 5
   m_Name: TestPopup
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animIn: {fileID: 7253387092769671204}
-  animOut: {fileID: 2957614241359666677}
+  animOut: {fileID: 3733596497629740802}
   properties:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   fadeDurationPercent: 0.5
   ease: 1
   xYSplit: 0.25
---- !u!114 &2957614241359666677
+--- !u!114 &3733596497629740802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,15 +242,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3010318256975317951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0ffd164e4450f439d7c219e6c88ce7, type: 3}
+  m_Script: {fileID: 11500000, guid: fba1e145d32ecc1418c1b103ff6a7b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: 2
   isOutAnimation: 1
   duration: 0.5
   doFade: 0
   fadeDurationPercent: 0.5
-  ease: 1
+  ease: 27
+  xYSplit: 0.25
 --- !u!225 &3562680015335051492
 CanvasGroup:
   m_ObjectHideFlags: 0

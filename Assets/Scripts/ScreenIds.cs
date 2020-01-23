@@ -15,6 +15,8 @@ namespace deVoid.UIFramework.Utils {
         
         public const string CameraProjectionWindow = "CameraProjectionWindow";
         
+        public const string CategoriesWindow = "CategoriesWindow";
+        
         public const string ConfirmationPopup = "ConfirmationPopup";
         
         public const string HomeWindow = "HomeWindow";
