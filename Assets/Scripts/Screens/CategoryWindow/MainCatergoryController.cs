@@ -1,12 +1,16 @@
 ﻿using SuperScrollView;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainCatergoryController : MonoBehaviour
 {
     [SerializeField] LoopListView2 mainCatergoryListView = null;
-    [SerializeField] GameObject itemOrigin = null;
+    [SerializeField] GameObject mainCategoryItemOrigin = null;
+
+    [SerializeField] LoopListView2 bottomLinkerListView = null;
+    [SerializeField] GameObject subCatergoryOrigin = null;
 
     private List<ItemData> listItemData = null;
 
@@ -26,16 +30,41 @@ public class MainCatergoryController : MonoBehaviour
         //initParam.mSnapFinishThreshold = 1f;
         //initParam.mSnapVecThreshold = 300f;
         //initParam.mSmoothDumpRate = 0.5f;
-        mainCatergoryListView.InitListView(-1, OnListViewUpdate, initParam);
+
+        mainCatergoryListView.InitListView(-1, OnMainCategoryListViewUpdate, initParam);
+        bottomLinkerListView.InitListView(-1, OnBottomListViewUpdate);
     }
 
-    private LoopListViewItem2 OnListViewUpdate(LoopListView2 _listview, int _index)
+    /// <summary>
+    /// On create(recreate) new item for main category list view, and setting data
+    /// </summary>
+    /// <param name="_listview"></param>
+    /// <param name="_index"></param>
+    /// <returns></returns>
+    private LoopListViewItem2 OnMainCategoryListViewUpdate(LoopListView2 _listview, int _index)
     {
         int itemCount = listItemData.Count;
         int actualyIndex = _index < 0 ? itemCount + ((_index + 1) % itemCount) - 1 : _index % itemCount;
-        LoopListViewItem2 itemObj = _listview.NewListViewItem(itemOrigin.name);
+        LoopListViewItem2 itemObj = _listview.NewListViewItem(mainCategoryItemOrigin.name);
         ItemData itemData = listItemData[actualyIndex];
         itemObj.GetComponent<MainCategoryItem>().SetData(itemData);
+
+        return itemObj;
+    }
+
+    /// <summary>
+    /// On create(recreate) new item for bottom list view, and setting data
+    /// </summary>
+    /// <param name="_listview"></param>
+    /// <param name="_index"></param>
+    /// <returns></returns>
+    private LoopListViewItem2 OnBottomListViewUpdate(LoopListView2 _listview, int _index)
+    {
+        int itemCount = listItemData.Count;
+        int actualyIndex = _index < 0 ? itemCount + ((_index + 1) % itemCount) - 1 : _index % itemCount;
+        LoopListViewItem2 itemObj = _listview.NewListViewItem(subCatergoryOrigin.name);
+        ItemData itemData = listItemData[actualyIndex];
+        itemObj.GetComponentInChildren<TextMeshProUGUI>().text = itemData.title;
 
         return itemObj;
     }
