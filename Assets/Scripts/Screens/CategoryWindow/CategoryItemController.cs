@@ -3,43 +3,42 @@ using SuperScrollView;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CategoryItemController : MonoBehaviour
 {
-    [SerializeField] CategoryBannerItem categoryBannerItem = null;
-    [SerializeField] LoopListView2 subCategoryListView = null;
-    [SerializeField] GameObject subCategoryItemOrigin = null;
+    [SerializeField] private CategoryBannerItem categoryBannerItem = null;
+    [SerializeField] private LoopListView2 subCategoryListView = null;
+    [SerializeField] private GameObject subCategoryItemOrigin = null;
+    [SerializeField] private LessonData lessonData = null;
 
     public LoopListView2 SubCategoryListView { get { return subCategoryListView; } }
-    private List<int> subCategoryData = null;
+
+    private List<LessonData.Lesson> listLessons = new List<LessonData.Lesson>();
 
     private void Awake()
     {
         subCategoryListView.InitListView(0, OnSubCategoryListUpdate);
     }
 
-    public void SetData(ItemData _data)
+    public void SetData(TopicData.Topic _data)
     {
         categoryBannerItem.SetData(_data);
 
-        subCategoryData = new List<int>();
-        int rand = UnityEngine.Random.Range(50, 91);
-        for (int i = 0; i < rand; i++)
-        {
-            subCategoryData.Add(i);
-        }
+        listLessons = lessonData.mListLessons.Where(x => x.topic_id == _data.id).ToList();
+        listLessons = listLessons.OrderBy(x => x.order).ToList();
 
-        subCategoryListView.SetListItemCount(subCategoryData.Count, true);
+        subCategoryListView.SetListItemCount(listLessons.Count, true);
     }
 
     private LoopListViewItem2 OnSubCategoryListUpdate(LoopListView2 _listview, int _index)
     {
-        if (_index < 0 || _index >= subCategoryData.Count) return null;
+        if (_index < 0 || _index >= listLessons.Count) return null;
 
         LoopListViewItem2 itemObj = _listview.NewListViewItem(subCategoryItemOrigin.name);
-        itemObj.GetComponent<SubCategoryItem>().SetData(_index.ToString());
+        itemObj.GetComponent<SubCategoryItem>().SetData(listLessons[_index]);
 
         return itemObj;
     }

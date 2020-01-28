@@ -2,25 +2,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class MainCatergoryController : MonoBehaviour
 {
-    [SerializeField] LoopListView2 catergoryListView = null;
-    [SerializeField] GameObject categoryItemOrigin = null;
+    [SerializeField] private LoopListView2 catergoryListView = null;
+    [SerializeField] private GameObject categoryItemOrigin = null;
+    [SerializeField] private TopicData topicData = null;
 
-    private List<ItemData> listItemData = null;
+    private List<TopicData.Topic> listTopics = null;
 
     private void Start()
     {
-        listItemData = new List<ItemData>();
-
-        for (int i = 0; i < 10; i++)
-        {
-            ItemData temp = new ItemData("Flower " + (i + 1));
-            listItemData.Add(temp);
-        }
+        listTopics = topicData.mListTopics.OrderBy(x => x.order).ToList();
 
         LoopListViewInitParam initParam = LoopListViewInitParam.CopyDefaultInitParam();
         initParam.mSnapVecThreshold = 99999;
@@ -42,10 +38,10 @@ public class MainCatergoryController : MonoBehaviour
     /// <returns></returns>
     private LoopListViewItem2 OnCategoryListViewUpdate(LoopListView2 _listview, int _index)
     {
-        int itemCount = listItemData.Count;
+        int itemCount = listTopics.Count;
         int actualyIndex = _index < 0 ? itemCount + ((_index + 1) % itemCount) - 1 : _index % itemCount;
         LoopListViewItem2 itemObj = _listview.NewListViewItem(categoryItemOrigin.name);
-        ItemData itemData = listItemData[actualyIndex];
+        TopicData.Topic itemData = listTopics[actualyIndex];
         itemObj.GetComponent<CategoryItemController>().SetData(itemData);
 
         return itemObj;

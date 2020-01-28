@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class SubCategoryItem : MonoBehaviour
 {
     [SerializeField] Text titleLabel = null;
+    [SerializeField] Image icon= null;
 
-    public void SetData(string _title)
+    public void SetData(LessonData.Lesson _data)
     {
-        titleLabel.text = _title;
+        titleLabel.text = _data.title;
+        icon.sprite = Resources.Load<Sprite>("Images/lesson_" + _data.id);
 
         // scale animation when item created
         RectTransform rTransform = transform as RectTransform;
