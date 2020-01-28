@@ -38,6 +38,9 @@ namespace deVoid.UIFramework.Editor
             var root = new GameObject("UIFrame");
             var camera = new GameObject("UICamera");
 
+            var aspectCam = camera.AddComponent<StableAspectCamera>();
+            aspectCam.aspect = new Vector2(1080, 1920);
+
             var cam = camera.AddComponent<Camera>();
             cam.clearFlags = CameraClearFlags.Depth;
             cam.cullingMask = LayerMask.GetMask("UI");

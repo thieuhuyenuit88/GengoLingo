@@ -1,4 +1,5 @@
 ﻿using SuperScrollView;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,11 +7,8 @@ using UnityEngine;
 
 public class MainCatergoryController : MonoBehaviour
 {
-    [SerializeField] LoopListView2 mainCatergoryListView = null;
-    [SerializeField] GameObject mainCategoryItemOrigin = null;
-
-    [SerializeField] LoopListView2 bottomLinkerListView = null;
-    [SerializeField] GameObject subCatergoryOrigin = null;
+    [SerializeField] LoopListView2 catergoryListView = null;
+    [SerializeField] GameObject categoryItemOrigin = null;
 
     private List<ItemData> listItemData = null;
 
@@ -26,61 +24,126 @@ public class MainCatergoryController : MonoBehaviour
 
         LoopListViewInitParam initParam = LoopListViewInitParam.CopyDefaultInitParam();
         initParam.mSnapVecThreshold = 99999;
-        initParam.mItemDefaultWithPaddingSize = 610f;
-        //initParam.mSnapFinishThreshold = 1f;
-        //initParam.mSnapVecThreshold = 300f;
-        //initParam.mSmoothDumpRate = 0.5f;
+        initParam.mItemDefaultWithPaddingSize = 1080f;
 
-        mainCatergoryListView.InitListView(-1, OnMainCategoryListViewUpdate, initParam);
-        bottomLinkerListView.InitListView(-1, OnBottomListViewUpdate);
+        catergoryListView.mOnBeginDragAction = OnBeginDrag;
+        catergoryListView.mOnDragingAction = OnDraging;
+        catergoryListView.mOnEndDragAction = OnEndDrag;
+        catergoryListView.mOnSnapNearestChanged = OnSnapNearestChanged;
+
+        catergoryListView.InitListView(-1, OnCategoryListViewUpdate, initParam);
     }
 
     /// <summary>
-    /// On create(recreate) new item for main category list view, and setting data
+    /// On create(recreate) new item for category list view, and setting data
     /// </summary>
     /// <param name="_listview"></param>
     /// <param name="_index"></param>
     /// <returns></returns>
-    private LoopListViewItem2 OnMainCategoryListViewUpdate(LoopListView2 _listview, int _index)
+    private LoopListViewItem2 OnCategoryListViewUpdate(LoopListView2 _listview, int _index)
     {
         int itemCount = listItemData.Count;
         int actualyIndex = _index < 0 ? itemCount + ((_index + 1) % itemCount) - 1 : _index % itemCount;
-        LoopListViewItem2 itemObj = _listview.NewListViewItem(mainCategoryItemOrigin.name);
+        LoopListViewItem2 itemObj = _listview.NewListViewItem(categoryItemOrigin.name);
         ItemData itemData = listItemData[actualyIndex];
-        itemObj.GetComponent<MainCategoryItem>().SetData(itemData);
-
-        return itemObj;
-    }
-
-    /// <summary>
-    /// On create(recreate) new item for bottom list view, and setting data
-    /// </summary>
-    /// <param name="_listview"></param>
-    /// <param name="_index"></param>
-    /// <returns></returns>
-    private LoopListViewItem2 OnBottomListViewUpdate(LoopListView2 _listview, int _index)
-    {
-        int itemCount = listItemData.Count;
-        int actualyIndex = _index < 0 ? itemCount + ((_index + 1) % itemCount) - 1 : _index % itemCount;
-        LoopListViewItem2 itemObj = _listview.NewListViewItem(subCatergoryOrigin.name);
-        ItemData itemData = listItemData[actualyIndex];
-        itemObj.GetComponentInChildren<TextMeshProUGUI>().text = itemData.title;
+        itemObj.GetComponent<CategoryItemController>().SetData(itemData);
 
         return itemObj;
     }
 
     private void LateUpdate()
     {
-        mainCatergoryListView.UpdateAllShownItemSnapData();
-        int count = mainCatergoryListView.ShownItemCount;
+        catergoryListView.UpdateAllShownItemSnapData();
+        int count = catergoryListView.ShownItemCount;
         for (int i = 0; i < count; i++)
         {
-            LoopListViewItem2 itemObj = mainCatergoryListView.GetShownItemByIndex(i);
-            MainCategoryItem mainCategoryItem = itemObj.GetComponent<MainCategoryItem>();
-            float diff = 1 - Mathf.Abs(itemObj.DistanceWithViewPortSnapCenter) / 1200f;
+            LoopListViewItem2 itemObj = catergoryListView.GetShownItemByIndex(i);
+            float diff = 1 - Mathf.Abs(itemObj.DistanceWithViewPortSnapCenter) / 1540f;
             diff = Mathf.Clamp(diff, 0.2f, 1f);
-            mainCategoryItem.ContentRootObj.GetComponent<CanvasGroup>().alpha = diff;
-            mainCategoryItem.ContentRootObj.transform.localScale = new Vector3(diff, diff, 1f);
+            CategoryItemController itemController = itemObj.GetComponent<CategoryItemController>();
+            itemController.UpdateAnimation(diff, itemObj.DistanceWithViewPortSnapCenter);
+        }
+    }
+
+    private void OnSnapNearestChanged(LoopListView2 _listView, LoopListViewItem2 _item)
+    {
+        int index = _listView.GetIndexInShownItemList(_item);
+
+        LoopListViewItem2 prevItem = _listView.GetShownItemByIndex(index - 1);
+        if (prevItem != null)
+        {
+            CategoryItemController itemController = prevItem.GetComponent<CategoryItemController>();
+            itemController.SubCategoryListView.MovePanelToItemIndex(0, 0);
+            itemController.SubCategoryListView.FinishSnapImmediately();
+        }
+
+        LoopListViewItem2 nextItem = _listView.GetShownItemByIndex(index + 1);
+        if (nextItem != null)
+        {
+            CategoryItemController itemController = nextItem.GetComponent<CategoryItemController>();
+            itemController.SubCategoryListView.MovePanelToItemIndex(0, 0);
+            itemController.SubCategoryListView.FinishSnapImmediately();
+        }
+    }
+
+    private void OnBeginDrag()
+    {
+
+    }
+
+    private void OnDraging()
+    {
+
+    }
+
+    private void OnEndDrag()
+    {
+        float vec = catergoryListView.ScrollRect.velocity.x;
+        int curNearestItemIndex = catergoryListView.CurSnapNearestItemIndex;
+        LoopListViewItem2 item = catergoryListView.GetShownItemByItemIndex(curNearestItemIndex);
+        if (item == null)
+        {
+            catergoryListView.ClearSnapData();
+            return;
+        }
+        if (Mathf.Abs(vec) < 50f)
+        {
+            catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex);
+            return;
+        }
+        Vector3 pos = catergoryListView.GetItemCornerPosInViewPort(item, ItemCornerEnum.LeftTop);
+        if (pos.x > 0)
+        {
+            if (vec > 0)
+            {
+                catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex - 1);
+            }
+            else
+            {
+                catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex);
+            }
+        }
+        else if (pos.x < 0)
+        {
+            if (vec > 0)
+            {
+                catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex);
+            }
+            else
+            {
+                catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex + 1);
+            }
+        }
+        else
+        {
+            if (vec > 0)
+            {
+                catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex - 1);
+            }
+            else
+            {
+                catergoryListView.SetSnapTargetItemIndex(curNearestItemIndex + 1);
+            }
         }
     }
 }

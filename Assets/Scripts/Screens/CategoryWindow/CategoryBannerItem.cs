@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MainCategoryItem : MonoBehaviour
+public class CategoryBannerItem : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_TitleLabel = null;
     [SerializeField] GameObject m_ContentRoot = null;
