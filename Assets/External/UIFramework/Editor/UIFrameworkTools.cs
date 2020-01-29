@@ -56,6 +56,9 @@ namespace deVoid.UIFramework.Editor
             canvas.renderMode = RenderMode.ScreenSpaceCamera;
             canvas.worldCamera = cam;
 
+            // Set Texcoord shader for canvas
+            // canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.TexCoord1 | AdditionalCanvasShaderChannels.TexCoord2 | AdditionalCanvasShaderChannels.TexCoord3;
+
             cam.transform.SetParent(root.transform, false);
             cam.transform.localPosition = new Vector3(0f, 0f, -1500f);
 

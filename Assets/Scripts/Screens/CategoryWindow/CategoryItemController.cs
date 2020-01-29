@@ -45,8 +45,9 @@ public class CategoryItemController : MonoBehaviour
 
     public void UpdateAnimation(float _diff, float distanceWithCenter)
     {
-        categoryBannerItem.ContentRootObj.GetComponent<CanvasGroup>().alpha = _diff;
-        categoryBannerItem.ContentRootObj.transform.localScale = new Vector3(_diff, _diff, 1f);
+        float bannerDiff = Mathf.Clamp(_diff, 0.9f, 1f);
+        categoryBannerItem.ContentRootObj.GetComponent<CanvasGroup>().alpha = Mathf.Clamp(_diff, 0.6f, 1f);
+        categoryBannerItem.ContentRootObj.transform.localScale = new Vector3(bannerDiff, bannerDiff, 1f);
 
         subCategoryListView.UpdateAllShownItemSnapData();
         int count = subCategoryListView.ShownItemCount;

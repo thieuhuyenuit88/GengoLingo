@@ -1,18 +1,19 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using ThisOtherThing.UI.Shapes;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SubCategoryItem : MonoBehaviour
 {
     [SerializeField] Text titleLabel = null;
-    [SerializeField] Image icon= null;
+    [SerializeField] Rectangle icon= null;
 
     public void SetData(LessonData.Lesson _data)
     {
         titleLabel.text = _data.title;
-        icon.sprite = Resources.Load<Sprite>("Images/lesson_" + _data.id);
+        icon.Sprite = Resources.Load<Sprite>("Images/lesson_" + _data.id);
 
         // scale animation when item created
         RectTransform rTransform = transform as RectTransform;

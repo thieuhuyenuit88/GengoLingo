@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ThisOtherThing.UI.Shapes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 public class CategoryBannerItem : MonoBehaviour
 {
     [SerializeField] Text m_TitleLabel = null;
-    [SerializeField] Image icon = null;
+    [SerializeField] Rectangle icon = null;
     [SerializeField] GameObject m_ContentRoot = null;
 
     public GameObject ContentRootObj { get {return m_ContentRoot; }}
@@ -15,6 +16,6 @@ public class CategoryBannerItem : MonoBehaviour
     public void SetData(TopicData.Topic _data)
     {
         m_TitleLabel.text = _data.title;
-        icon.sprite = Resources.Load<Sprite>("Images/topic_" + _data.id);
+        icon.Sprite = Resources.Load<Sprite>("Images/topic_" + _data.id);
     }
 }
