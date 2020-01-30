@@ -24,9 +24,18 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.AntiAliasingProperties AntiAliasingProperties = 
 			new GeoUtils.AntiAliasingProperties();
 
-		public Sprite Sprite;
+        [SerializeField] private Sprite Sprite;
+        public Sprite sprite
+        {
+            get => Sprite;
+            set
+            {
+                Sprite = value;
+                SetAllDirty();
+            }
+        }
 
-		ShapeUtils.PointsList.PointsData[] pointsListData =
+        ShapeUtils.PointsList.PointsData[] pointsListData =
 			new ThisOtherThing.UI.ShapeUtils.PointsList.PointsData[] { new ShapeUtils.PointsList.PointsData()};
 		
 		GeoUtils.EdgeGradientData edgeGradientData;

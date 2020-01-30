@@ -33,9 +33,16 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.AntiAliasingProperties AntiAliasingProperties = 
 			new GeoUtils.AntiAliasingProperties();
 
-		public Sprite Sprite;
+        [SerializeField] private Sprite Sprite;
+        public Sprite sprite {
+            get => Sprite; 
+            set {
+                Sprite = value;
+                SetAllDirty();
+            }
+        }
 
-		ShapeUtils.RoundedRects.RoundedCornerUnitPositionData unitPositionData;
+        ShapeUtils.RoundedRects.RoundedCornerUnitPositionData unitPositionData;
 		UI.GeoUtils.EdgeGradientData edgeGradientData;
 
 		public void ForceMeshUpdate()

@@ -31,9 +31,18 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.AntiAliasingProperties AntiAliasingProperties =
 			new GeoUtils.AntiAliasingProperties();
 
-		public Sprite Sprite;
+        [SerializeField] private Sprite Sprite;
+        public Sprite sprite
+        {
+            get => Sprite;
+            set
+            {
+                Sprite = value;
+                SetAllDirty();
+            }
+        }
 
-		GeoUtils.UnitPositionData unitPositionData;
+        GeoUtils.UnitPositionData unitPositionData;
 		GeoUtils.EdgeGradientData edgeGradientData;
 		Vector2 radius = Vector2.one;
 
