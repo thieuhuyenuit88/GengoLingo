@@ -1739,7 +1739,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   parentScrollRect: {fileID: 2267124637764890379}
-  blockParentScroll: 1
+  blockParentScroll: 0
 --- !u!114 &2470954735318882321
 MonoBehaviour:
   m_ObjectHideFlags: 0
