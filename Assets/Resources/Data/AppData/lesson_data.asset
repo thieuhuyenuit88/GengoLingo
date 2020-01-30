@@ -17,6 +17,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u8EAB\u4F53"
     order: 8
+    icon: {fileID: 21300000, guid: 81ddd87ec4af63743adc550fddcc4f0d, type: 3}
     en: Body
     vi: "Th\xE2n Th\u1EC3"
     zh: "\u8EAB\u4F53"
@@ -60,6 +61,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u9854"
     order: 5
+    icon: {fileID: 21300000, guid: d37f515070cf5a24d830e0b446003dce, type: 3}
     en: Face
     vi: "Khu\xF4n M\u1EB7t"
     zh: "\u8138"
@@ -103,6 +105,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u624B"
     order: 6
+    icon: {fileID: 21300000, guid: 2dc5f20426ba8ad48aa91244f37da638, type: 3}
     en: Hand
     vi: Tay
     zh: "\u624B"
@@ -146,6 +149,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u8DB3"
     order: 7
+    icon: {fileID: 21300000, guid: f7feb9daa7d693847be91db030d97518, type: 3}
     en: Foot
     vi: "Ch\xE2n"
     zh: "\u811A"
@@ -189,6 +193,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u7B4B\u8089"
     order: 11
+    icon: {fileID: 21300000, guid: fe9b546bc00e0eb4498a336520f1e1b4, type: 3}
     en: Muscles
     vi: "C\u01A1"
     zh: "\u808C\u8089"
@@ -232,6 +237,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u9AA8\u683C"
     order: 10
+    icon: {fileID: 21300000, guid: a54b15bb1efec8c46b67f2ff2b3ece12, type: 3}
     en: Skeleton
     vi: "B\u1ED9 X\u01B0\u01A1ng"
     zh: "\u9AA8\u9ABC"
@@ -275,6 +281,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u5185\u8535"
     order: 9
+    icon: {fileID: 21300000, guid: 97267e81d2338b64f901e95e566c5e01, type: 3}
     en: Internal Organs
     vi: "C\u01A1 Quan N\u1ED9i T\u1EA1ng"
     zh: "\u5185\u810F"
@@ -318,6 +325,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u5BB6\u65CF"
     order: 3
+    icon: {fileID: 21300000, guid: 6c651a5349d9f93499cbf07e71eba303, type: 3}
     en: Family
     vi: "Gia \u0110\xECnh"
     zh: "\u5BB6\u5EAD"
@@ -361,6 +369,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u4EBA\u9593\u95A2\u4FC2"
     order: 2
+    icon: {fileID: 21300000, guid: 9ff649edf766b244d92aa16ac6121581, type: 3}
     en: Relationships
     vi: "Quan H\u1EC7"
     zh: "\u4EBA\u9645\u5173\u7CFB"
@@ -404,6 +413,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u611F\u60C5"
     order: 1
+    icon: {fileID: 21300000, guid: 9fab3839a6637474d9e6237c5956264d, type: 3}
     en: Emotions
     vi: "C\u1EA3m X\xFAc"
     zh: "\u60C5\u7EEA"
@@ -447,6 +457,7 @@ MonoBehaviour:
     topic_id: 1
     title: "\u4EBA\u751F"
     order: 4
+    icon: {fileID: 21300000, guid: 9aa921e529061ea4095965ce4e1a6d14, type: 3}
     en: Life Events
     vi: "Cu\u1ED9c \u0110\u1EDDi"
     zh: "\u4EBA\u751F"
@@ -490,6 +501,7 @@ MonoBehaviour:
     topic_id: 2
     title: "\u5973\u6027\u670D"
     order: 1
+    icon: {fileID: 21300000, guid: d01e3ea61fb59ca41a94d62bbf4a8b80, type: 3}
     en: Clothing - Women
     vi: "Qu\u1EA7n \xC1o N\u1EEF"
     zh: "\u5973\u58EB\u670D\u88C5"
@@ -535,6 +547,7 @@ MonoBehaviour:
     topic_id: 2
     title: "\u88C5\u8EAB\u5177"
     order: 6
+    icon: {fileID: 21300000, guid: 3a54002912254c94caa2b0ea6351be62, type: 3}
     en: Accessories
     vi: "Ph\u1EE5 Ki\u1EC7n"
     zh: "\u914D\u9970"
@@ -578,6 +591,7 @@ MonoBehaviour:
     topic_id: 2
     title: "\u9AEA"
     order: 4
+    icon: {fileID: 21300000, guid: 5a7702caa5e704e4b9979cc2ea3eeda8, type: 3}
     en: Hair
     vi: "T\xF3c"
     zh: "\u5934\u53D1"
@@ -621,6 +635,7 @@ MonoBehaviour:
     topic_id: 2
     title: "\u7F8E\u5BB9"
     order: 5
+    icon: {fileID: 21300000, guid: ab5155907fcdc5546a3eb0ac23a15076, type: 3}
     en: Beauty
     vi: "V\u1EBB \u0110\u1EB9p"
     zh: "\u7F8E\u5BB9"
@@ -664,6 +679,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u75C5\u6C17"
     order: 1
+    icon: {fileID: 21300000, guid: e6caf5b390e8d0c4cbdf9cb518aecf85, type: 3}
     en: Illness
     vi: "B\u1EC7nh T\u1EADt"
     zh: "\u75BE\u75C5"
@@ -707,6 +723,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u533B\u8005"
     order: 3
+    icon: {fileID: 21300000, guid: c82eca4aa1ef6254caa4900e22c1df36, type: 3}
     en: Doctor
     vi: "B\xE1c S\u0129"
     zh: "\u533B\u751F"
@@ -750,6 +767,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u602A\u6211"
     order: 2
+    icon: {fileID: 21300000, guid: 85390365306cd264280609f3ec23311f, type: 3}
     en: Injury
     vi: "V\u1EBFt Th\u01B0\u01A1ng"
     zh: "\u4F24\u53E3"
@@ -793,6 +811,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u5FDC\u6025\u624B\u5F53"
     order: 4
+    icon: {fileID: 21300000, guid: 99802d4e21dfb6747bf494c6692cae8f, type: 3}
     en: First Aid
     vi: "S\u01A1 C\u1EE9u"
     zh: "\u6025\u6551"
@@ -836,6 +855,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u75C5\u9662"
     order: 5
+    icon: {fileID: 21300000, guid: 7078ea08e70bea04fbef2be1d658c05b, type: 3}
     en: Hospital
     vi: "B\u1EC7nh Vi\u1EC7n"
     zh: "\u533B\u9662"
@@ -879,6 +899,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u76EE"
     order: 9
+    icon: {fileID: 21300000, guid: e35ff4d15e5ed1849a17dee0d9bed232, type: 3}
     en: Eye
     vi: "M\u1EAFt"
     zh: "\u773C\u775B"
@@ -922,6 +943,7 @@ MonoBehaviour:
     topic_id: 3
     title: "\u51FA\u7523"
     order: 10
+    icon: {fileID: 21300000, guid: 96082da238e995f44ae8b3979d1598c5, type: 3}
     en: Childbirth
     vi: "Sinh \u0110\u1EBB"
     zh: "\u5206\u5A29"
@@ -965,6 +987,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u4F4F\u5B85"
     order: 7
+    icon: {fileID: 21300000, guid: ef9897f04a7e62147914d9657c71bdf5, type: 3}
     en: House
     vi: "Nh\xE0 \u1EDE"
     zh: "\u4F4F\u5B85"
@@ -1008,6 +1031,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u5C45\u9593"
     order: 2
+    icon: {fileID: 21300000, guid: cd804d587f68867478ee313a16a9dfb8, type: 3}
     en: Living Room
     vi: "Ph\xF2ng Kh\xE1ch"
     zh: "\u5BA2\u5385"
@@ -1051,6 +1075,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u30C0\u30A4\u30CB\u30F3\u30B0\u30EB\u30FC\u30E0"
     order: 3
+    icon: {fileID: 21300000, guid: 6cfa52bf2fffea14aa8e50b26a8a5725, type: 3}
     en: Dining Room
     vi: "Ph\xF2ng \u0102n"
     zh: "\u9910\u5385"
@@ -1094,6 +1119,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u53F0\u6240"
     order: 4
+    icon: {fileID: 21300000, guid: 577a0762e2a757b458aa2a88b2437e2e, type: 3}
     en: Kitchen
     vi: "Nh\xE0 B\u1EBFp"
     zh: "\u53A8\u623F"
@@ -1137,6 +1163,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u8ABF\u7406\u7528\u5177"
     order: 1
+    icon: {fileID: 21300000, guid: 29c22a3c87a090548a0358c8b79d54ed, type: 3}
     en: Kitchenware
     vi: "\u0110\u1ED3 D\xF9ng N\u1EA5u \u0102n"
     zh: "\u53A8\u623F\u7528\u5177"
@@ -1182,6 +1209,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u5BDD\u5BA4"
     order: 5
+    icon: {fileID: 21300000, guid: 513f9be172defed49aa05b3da03b0f1f, type: 3}
     en: Bedroom
     vi: "Ph\xF2ng Ng\u1EE7"
     zh: "\u5367\u5BA4"
@@ -1225,6 +1253,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u6D74\u5BA4"
     order: 6
+    icon: {fileID: 21300000, guid: 3f6af5b0d9bfa76459139c4e82b4b441, type: 3}
     en: Bathroom
     vi: "Nh\xE0 T\u1EAFm"
     zh: "\u6D74\u5BA4"
@@ -1268,6 +1297,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u5B50\u4F9B\u90E8\u5C4B"
     order: 8
+    icon: {fileID: 21300000, guid: 967ce2ae26714ed439ab476dbe022fe1, type: 3}
     en: Nursery
     vi: "Ph\xF2ng Tr\u1EBB Em"
     zh: "\u513F\u7AE5\u95F4"
@@ -1311,6 +1341,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u30E6\u30C6\u30A3\u30EA\u30C6\u30A3\u30EB\u30FC\u30E0"
     order: 9
+    icon: {fileID: 21300000, guid: 669d2749615fe5d4db46e50ad29aa18d, type: 3}
     en: Utility Room
     vi: "Ph\xF2ng Ti\u1EC7n \xCDch"
     zh: "\u6742\u7269\u95F4"
@@ -1354,6 +1385,7 @@ MonoBehaviour:
     topic_id: 4
     title: "\u4F5C\u696D\u5834"
     order: 10
+    icon: {fileID: 21300000, guid: 495aed038c8ea324ba8596d85addd881, type: 3}
     en: Workshop
     vi: "X\u01B0\u1EDFng"
     zh: "\u8F66\u95F4"
@@ -1397,6 +1429,7 @@ MonoBehaviour:
     topic_id: 5
     title: "\u7DCA\u6025\u30B5\u30FC\u30D3\u30B9"
     order: 3
+    icon: {fileID: 21300000, guid: 9797150d9650882418d06974702f4449, type: 3}
     en: Emergency Services
     vi: "C\xE1c D\u1ECBch V\u1EE5 Kh\u1EA9n C\u1EA5p"
     zh: "\u7D27\u6025\u670D\u52A1"
@@ -1441,6 +1474,7 @@ MonoBehaviour:
     topic_id: 5
     title: "\u9280\u884C"
     order: 2
+    icon: {fileID: 21300000, guid: 87e11a7c0cb052d41acdb971cfa7d185, type: 3}
     en: Bank
     vi: "Ng\xE2n H\xE0ng"
     zh: "\u94F6\u884C"
@@ -1484,6 +1518,7 @@ MonoBehaviour:
     topic_id: 5
     title: "\u30B3\u30DF\u30E5\u30CB\u30B1\u30FC\u30B7\u30E7\u30F3"
     order: 4
+    icon: {fileID: 21300000, guid: c33b40209b145a64986ad680580d779d, type: 3}
     en: Communications
     vi: "Truy\u1EC1n Th\xF4ng"
     zh: "\u901A\u8BAF"
@@ -1527,6 +1562,7 @@ MonoBehaviour:
     topic_id: 5
     title: "\u30DB\u30C6\u30EB"
     order: 1
+    icon: {fileID: 21300000, guid: 6cfc5b0b00db992448b1481e52a8834d, type: 3}
     en: Hotel
     vi: "Kh\xE1ch S\u1EA1n"
     zh: "\u65C5\u9986"
@@ -1570,6 +1606,7 @@ MonoBehaviour:
     topic_id: 6
     title: "\u30B7\u30E7\u30C3\u30D4\u30F3\u30B0\u30BB\u30F3\u30BF\u30FC"
     order: 4
+    icon: {fileID: 21300000, guid: 80310ecaa05d9b843ba843f73fe9613d, type: 3}
     en: Shopping Centre
     vi: "Trung T\xE2m Mua S\u1EAFm"
     zh: "\u8D2D\u7269\u4E2D\u5FC3"
@@ -1613,6 +1650,7 @@ MonoBehaviour:
     topic_id: 6
     title: "\u30B9\u30FC\u30D1\u30FC\u30DE\u30FC\u30B1\u30C3\u30C8"
     order: 1
+    icon: {fileID: 21300000, guid: bd61a5883a5765d488b420fc923c27d5, type: 3}
     en: Supermarket
     vi: "Si\xEAu Th\u1ECB"
     zh: "\u8D85\u5E02"
@@ -1656,6 +1694,7 @@ MonoBehaviour:
     topic_id: 6
     title: "\u85AC\u5C40"
     order: 3
+    icon: {fileID: 21300000, guid: d039aa74b64402a498ea5cbeb8cd3786, type: 3}
     en: Chemist
     vi: "D\u01B0\u1EE3c Ph\u1EA9m"
     zh: "\u836F\u54C1"
@@ -1699,6 +1738,7 @@ MonoBehaviour:
     topic_id: 6
     title: "\u83D3\u5B50\u5C4B"
     order: 6
+    icon: {fileID: 21300000, guid: b88789206bdeaa84cb23f2f3a0f7113d, type: 3}
     en: Confectioner
     vi: "C\u1EEDa H\xE0ng K\u1EB9o"
     zh: "\u7CD6\u679C\u5E97"
@@ -1742,6 +1782,7 @@ MonoBehaviour:
     topic_id: 6
     title: "\u305D\u306E\u4ED6\u306E\u5E97"
     order: 7
+    icon: {fileID: 21300000, guid: b8c0d8804eb60a1409329631ff5a0d46, type: 3}
     en: Other Shops
     vi: "C\u1EEDa H\xE0ng Kh\xE1c"
     zh: "\u5176\u4ED6\u5546\u5E97"
@@ -1785,6 +1826,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u8089"
     order: 6
+    icon: {fileID: 21300000, guid: 7f66368b205137646872a356bad53754, type: 3}
     en: Meat
     vi: "Th\u1ECBt"
     zh: "\u8089"
@@ -1828,6 +1870,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u9B5A"
     order: 7
+    icon: {fileID: 21300000, guid: 37998cced00de9346998aa919eb6a69d, type: 3}
     en: Fish
     vi: "C\xE1"
     zh: "\u9C7C"
@@ -1871,6 +1914,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u91CE\u83DC"
     order: 2
+    icon: {fileID: 21300000, guid: 51796872261e1754783f5fefedc764d0, type: 3}
     en: Vegetables
     vi: Rau
     zh: "\u83DC"
@@ -1914,6 +1958,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u679C\u7269"
     order: 1
+    icon: {fileID: 21300000, guid: 96627356b46ee2d48b0cd06bc20a7048, type: 3}
     en: Fruit
     vi: "Hoa Qu\u1EA3"
     zh: "\u6C34\u679C"
@@ -1957,6 +2002,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u7A40\u985E\u3068\u8C46\u985E"
     order: 8
+    icon: {fileID: 21300000, guid: 4c39786bc7355e24bbb8513eac7165b8, type: 3}
     en: Grains And Legumes
     vi: "Ng\u0169 C\u1ED1c V\xE0 C\xE1c Lo\u1EA1i \u0110\u1EADu"
     zh: "\u8C37\u7269\u548C\u8C46\u7C7B"
@@ -2002,6 +2048,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u30CF\u30FC\u30D6\u3068\u9999\u8F9B\u6599"
     order: 12
+    icon: {fileID: 21300000, guid: 96ff11b2af97c144998e581449ac7117, type: 3}
     en: Herbs And Spices
     vi: "C\xE1c Lo\u1EA1i Th\u1EA3o M\u1ED9c V\xE0 Gia V\u1ECB"
     zh: "\u836F\u8349\u548C\u9999\u6599"
@@ -2046,6 +2093,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u74F6\u8A70\u3081\u98DF\u54C1"
     order: 10
+    icon: {fileID: 21300000, guid: 422af47413cb68a4aa3255852cd2de6c, type: 3}
     en: Bottled Foods
     vi: "Th\u1EF1c Ph\u1EA9m \u0110\xF3ng Chai"
     zh: "\u74F6\u88C5\u98DF\u54C1"
@@ -2092,6 +2140,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u4E73\u88FD\u54C1"
     order: 9
+    icon: {fileID: 21300000, guid: 63b8fc837f1e01a42a1896da3953f4a1, type: 3}
     en: Dairy Produce
     vi: "S\u1EA3n Ph\u1EA9m T\u1EEB S\u1EEFa"
     zh: "\u4E73\u5236\u54C1"
@@ -2136,6 +2185,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u30D1\u30F3\u3068\u5C0F\u9EA6\u7C89"
     order: 5
+    icon: {fileID: 21300000, guid: 972fec3369d5b80408842a7e293e8b66, type: 3}
     en: Breads And Flours
     vi: "B\xE1nh M\xEC V\xE0 B\u1ED9t"
     zh: "\u9762\u5305\u548C\u9762\u7C89"
@@ -2180,6 +2230,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u30B1\u30FC\u30AD\u3068\u30C7\u30B6\u30FC\u30C8"
     order: 4
+    icon: {fileID: 21300000, guid: 18579295d676d8a4db6a3fb9412bc325, type: 3}
     en: Cakes And Desserts
     vi: "B\xE1nh Ng\u1ECDt V\xE0 M\xF3n Tr\xE1ng Mi\u1EC7ng"
     zh: "\u86CB\u7CD5\u548C\u751C\u70B9"
@@ -2223,6 +2274,7 @@ MonoBehaviour:
     topic_id: 7
     title: "\u98F2\u7269"
     order: 3
+    icon: {fileID: 21300000, guid: 8fb34bebcd7634544887c9d09278a586, type: 3}
     en: Drinks
     vi: "\u0110\u1ED3 U\u1ED1ng"
     zh: "\u996E\u6599"
@@ -2266,6 +2318,7 @@ MonoBehaviour:
     topic_id: 8
     title: "\u30AB\u30D5\u30A7"
     order: 5
+    icon: {fileID: 21300000, guid: 1382c5ba8d124fd4392b2b5067da2bfa, type: 3}
     en: "Caf\xE9"
     vi: Cafe
     zh: "\u5496\u5561"
@@ -2309,6 +2362,7 @@ MonoBehaviour:
     topic_id: 8
     title: "\u30D0\u30FC"
     order: 6
+    icon: {fileID: 21300000, guid: 6be4ae0a2ba415e4aa17eac15a0fcb5e, type: 3}
     en: Bar
     vi: "Qu\xE1n Bar"
     zh: "\u9152\u5427"
@@ -2352,6 +2406,7 @@ MonoBehaviour:
     topic_id: 8
     title: "\u30EC\u30B9\u30C8\u30E9\u30F3"
     order: 1
+    icon: {fileID: 21300000, guid: da1cb7c9fd874144e9c08104f6fcec31, type: 3}
     en: Restaurant
     vi: "Nh\xE0 H\xE0ng"
     zh: "\u996D\u5E97"
@@ -2395,6 +2450,7 @@ MonoBehaviour:
     topic_id: 8
     title: "\u30D5\u30A1\u30FC\u30B9\u30C8\u30D5\u30FC\u30C9"
     order: 2
+    icon: {fileID: 21300000, guid: b9422221a272a134480d2dd88ec50cc5, type: 3}
     en: Fast Food
     vi: "Qu\xE1n \u0102n Nhanh"
     zh: "\u5FEB\u9910"
@@ -2438,6 +2494,7 @@ MonoBehaviour:
     topic_id: 8
     title: "\u671D\u98DF"
     order: 3
+    icon: {fileID: 21300000, guid: cbe72710e30ff32478a9c0bca4f385ba, type: 3}
     en: Breakfast
     vi: "B\u1EEFa S\xE1ng"
     zh: "\u65E9\u9910"
@@ -2481,6 +2538,7 @@ MonoBehaviour:
     topic_id: 8
     title: "\u98DF\u4E8B"
     order: 4
+    icon: {fileID: 21300000, guid: fa2fb20aa5d3d1146972950b5496c43c, type: 3}
     en: Dinner
     vi: "B\u1EEFa T\u1ED1i"
     zh: "\u665A\u9910"
@@ -2524,6 +2582,7 @@ MonoBehaviour:
     topic_id: 9
     title: "\u5B66\u6821  school"
     order: 1
+    icon: {fileID: 21300000, guid: f47a6a1653a3e614a9da220751fe7b47, type: 3}
     en: School
     vi: "Tr\u01B0\u1EDDng H\u1ECDc"
     zh: "\u5B66\u6821"
@@ -2567,6 +2626,7 @@ MonoBehaviour:
     topic_id: 9
     title: "\u6570\u5B66"
     order: 3
+    icon: {fileID: 21300000, guid: c02fc819e67c24146ab0fa1ef911d3d9, type: 3}
     en: Math
     vi: "M\xF4n To\xE1n"
     zh: "\u6570\u5B66"
@@ -2610,6 +2670,7 @@ MonoBehaviour:
     topic_id: 9
     title: "\u5927\u5B66"
     order: 2
+    icon: {fileID: 21300000, guid: 1b30a5b9a4ff79543b14d5117d3ca005, type: 3}
     en: College
     vi: "\u0110\u1EA1i H\u1ECDc"
     zh: "\u5927\u5B66"
@@ -2653,6 +2714,7 @@ MonoBehaviour:
     topic_id: 10
     title: "\u4E8B\u52D9\u6240"
     order: 2
+    icon: {fileID: 21300000, guid: e180de158860bde43b326aae6c8da4a8, type: 3}
     en: Office
     vi: "V\u0103n Ph\xF2ng"
     zh: "\u529E\u516C\u5BA4"
@@ -2696,6 +2758,7 @@ MonoBehaviour:
     topic_id: 10
     title: "\u30B3\u30F3\u30D4\u30E5\u30FC\u30BF"
     order: 3
+    icon: {fileID: 21300000, guid: 5409e7e30d93e1a4394d49f813384bb0, type: 3}
     en: Computer
     vi: "M\xE1y T\xEDnh"
     zh: "\u7535\u8111"
@@ -2739,6 +2802,7 @@ MonoBehaviour:
     topic_id: 10
     title: "\u8FB2\u5834"
     order: 4
+    icon: {fileID: 21300000, guid: 114121f51807e65479897b59c701d005, type: 3}
     en: Farm
     vi: "N\xF4ng Tr\u1EA1i"
     zh: "\u519C\u573A"
@@ -2782,6 +2846,7 @@ MonoBehaviour:
     topic_id: 10
     title: "\u5EFA\u8A2D"
     order: 5
+    icon: {fileID: 21300000, guid: 4f6586e0081bc574b8d60e9fbaf0b5c9, type: 3}
     en: Construction
     vi: "X\xE2y D\u1EF1ng"
     zh: "\u5EFA\u8BBE"
@@ -2825,6 +2890,7 @@ MonoBehaviour:
     topic_id: 10
     title: "\u8077\u696D"
     order: 1
+    icon: {fileID: 21300000, guid: 6ddab522ed1c02841977b5143873594d, type: 3}
     en: Occupations
     vi: "Ngh\u1EC1 Nghi\u1EC7p"
     zh: "\u804C\u4E1A"
@@ -2868,6 +2934,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u9053\u8DEF"
     order: 1
+    icon: {fileID: 21300000, guid: a00998f039ebed1489205cd57d110fa6, type: 3}
     en: Roads
     vi: "\u0110\u01B0\u1EDDng"
     zh: "\u9053\u8DEF"
@@ -2911,6 +2978,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u30D0\u30B9"
     order: 3
+    icon: {fileID: 21300000, guid: b05472597b815ed4196a5b03e2e96424, type: 3}
     en: Bus
     vi: Xe Bus
     zh: "\u516C\u5171\u6C7D\u8F66"
@@ -2954,6 +3022,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u81EA\u52D5\u8ECA"
     order: 2
+    icon: {fileID: 21300000, guid: e365f1ffdc20ba6478b8ebf81d04a35d, type: 3}
     en: Car
     vi: "Xe \xD4 T\xF4"
     zh: "\u6C7D\u8F66"
@@ -2997,6 +3066,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u30AA\u30FC\u30C8\u30D0\u30A4"
     order: 5
+    icon: {fileID: 21300000, guid: 3cb870654d9d09143aeccf368904fc69, type: 3}
     en: Motorcycle
     vi: "Xe M\xE1y"
     zh: "\u6469\u6258\u8F66"
@@ -3040,6 +3110,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u81EA\u8EE2\u8ECA"
     order: 4
+    icon: {fileID: 21300000, guid: 6be2cb70c0684bd4fb1b60fe5e14a647, type: 3}
     en: Bicycle
     vi: "Xe \u0110\u1EA1p"
     zh: "\u81EA\u884C\u8F66"
@@ -3083,6 +3154,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u5217\u8ECA"
     order: 6
+    icon: {fileID: 21300000, guid: 3dd858abcdc4f664fa5adc968d0b2b0d, type: 3}
     en: Train
     vi: "T\xE0u"
     zh: "\u706B\u8F66"
@@ -3126,6 +3198,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u822A\u7A7A\u6A5F"
     order: 7
+    icon: {fileID: 21300000, guid: ae3678c0349096741b1da4ba842c3246, type: 3}
     en: Aircraft
     vi: "M\xE1y Bay"
     zh: "\u98DE\u673A"
@@ -3169,6 +3242,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u7A7A\u6E2F"
     order: 8
+    icon: {fileID: 21300000, guid: 52a17cbafa347604e868718f1a3c9784, type: 3}
     en: Airport
     vi: "S\xE2n Bay"
     zh: "\u673A\u573A"
@@ -3212,6 +3286,7 @@ MonoBehaviour:
     topic_id: 11
     title: "\u8239"
     order: 9
+    icon: {fileID: 21300000, guid: 195beeaa32b4eca4993b1a819ffcbede, type: 3}
     en: Ship
     vi: "Thuy\u1EC1n"
     zh: "\u8239"
@@ -3255,6 +3330,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30E9\u30B0\u30D3\u30FC"
     order: 5
+    icon: {fileID: 21300000, guid: 685f524e9b35a3341b8dc2b7475d9e9d, type: 3}
     en: Rugby
     vi: "B\xF3ng B\u1EA7u D\u1EE5c"
     zh: "\u82F1\u5F0F\u6A44\u6984\u7403"
@@ -3298,6 +3374,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30B5\u30C3\u30AB\u30FC"
     order: 4
+    icon: {fileID: 21300000, guid: 6f15b16cb4735804d9441c2b72d04a76, type: 3}
     en: Soccer
     vi: "B\xF3ng \u0110\xE1"
     zh: "\u8DB3\u7403"
@@ -3341,6 +3418,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30DB\u30C3\u30B1\u30FC"
     order: 9
+    icon: {fileID: 21300000, guid: 7ae56494d91e953428577452f3b92b1e, type: 3}
     en: Hockey
     vi: "Kh\xFAc C\xF4n C\u1EA7u"
     zh: "\u66F2\u68CD\u7403"
@@ -3384,6 +3462,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30AF\u30EA\u30B1\u30C3\u30C8"
     order: 10
+    icon: {fileID: 21300000, guid: df7169f7a51c439409a4d2f8ad008c03, type: 3}
     en: Cricket
     vi: "M\xF4n Crick\xEA"
     zh: "\u677F\u7403"
@@ -3427,6 +3506,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30D0\u30B9\u30B1\u30C3\u30C8\u30DC\u30FC\u30EB"
     order: 3
+    icon: {fileID: 21300000, guid: 533bb9205460dfd499464a9e6d03f5ba, type: 3}
     en: Basketball
     vi: "B\xF3ng R\u1ED5"
     zh: "\u7BEE\u7403"
@@ -3470,6 +3550,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u91CE\u7403"
     order: 2
+    icon: {fileID: 21300000, guid: 6da6f1d6f76c1fc45b27a3a29d88cd45, type: 3}
     en: Baseball
     vi: "B\xF3ng Ch\xE0y"
     zh: "\u68D2\u7403"
@@ -3513,6 +3594,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30C6\u30CB\u30B9"
     order: 1
+    icon: {fileID: 21300000, guid: 9b7b192f256263040ac8857f0dcbd75e, type: 3}
     en: Tennis
     vi: "Qu\u1EA7n V\u1EE3t"
     zh: "\u7F51\u7403"
@@ -3556,6 +3638,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30B4\u30EB\u30D5"
     order: 6
+    icon: {fileID: 21300000, guid: ff7bf40073f5e1d4780315d2cc10f402, type: 3}
     en: Golf
     vi: Golf
     zh: "\u9AD8\u5C14\u592B\u7403"
@@ -3599,6 +3682,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u9678\u4E0A\u7AF6\u6280"
     order: 11
+    icon: {fileID: 21300000, guid: 5dbba439ef842324981c8a7c21b67bb8, type: 3}
     en: Track And Field
     vi: "S\xE2n Ch\u1EA1y \u0110ua"
     zh: "\u7530\u5F84"
@@ -3642,6 +3726,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u683C\u95D8\u6280"
     order: 7
+    icon: {fileID: 21300000, guid: 4ae2875000e553640a0f70faf0cda128, type: 3}
     en: Combat Sports
     vi: "V\xF5 Thu\u1EADt"
     zh: "\u6B66\u672F"
@@ -3685,6 +3770,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u6C34\u6CF3"
     order: 8
+    icon: {fileID: 21300000, guid: 6949af39050906945954073c691699db, type: 3}
     en: Swimming
     vi: "B\u01A1i"
     zh: "\u6E38\u6CF3"
@@ -3728,6 +3814,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30BB\u30FC\u30EA\u30F3\u30B0"
     order: 12
+    icon: {fileID: 21300000, guid: b745b09867e1c964f8e627b83d4621f3, type: 3}
     en: Sailing
     vi: "Thuy\u1EC1n Bu\u1ED3m"
     zh: "\u5E06\u8239"
@@ -3771,6 +3858,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u4E57\u99AC"
     order: 13
+    icon: {fileID: 21300000, guid: 16bbe8a0b6847134ea069fdb96412dc5, type: 3}
     en: Horseback Riding
     vi: "C\u01B0\u1EE1i Ng\u1EF1a"
     zh: "\u9A91\u9A6C"
@@ -3814,6 +3902,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u91E3\u308A"
     order: 14
+    icon: {fileID: 21300000, guid: 36b3a31ce0c8c844fb08e7773f8be0fe, type: 3}
     en: Fishing
     vi: "C\xE2u C\xE1"
     zh: "\u9493\u9C7C"
@@ -3857,6 +3946,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30B9\u30AD\u30FC"
     order: 15
+    icon: {fileID: 21300000, guid: b255412f385811844b59ccd7b447a9ea, type: 3}
     en: Skiing
     vi: "Tr\u01B0\u1EE3t Tuy\u1EBFt"
     zh: "\u6ED1\u96EA"
@@ -3900,6 +3990,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u4ED6\u306E\u30B9\u30DD\u30FC\u30C4"
     order: 17
+    icon: {fileID: 21300000, guid: 65393837df47b104b9d0514631c3893d, type: 3}
     en: Other Sports
     vi: "M\xF4n Th\u1EC3 Thao Kh\xE1c"
     zh: "\u5176\u4ED6\u8FD0\u52A8"
@@ -3943,6 +4034,7 @@ MonoBehaviour:
     topic_id: 12
     title: "\u30D5\u30A3\u30C3\u30C8\u30CD\u30B9"
     order: 16
+    icon: {fileID: 21300000, guid: 899482672d789fb489ac612fca56e433, type: 3}
     en: Fitness
     vi: "Th\u1EC3 D\u1EE5c"
     zh: "\u5065\u8EAB"
@@ -3986,6 +4078,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u5287\u5834"
     order: 8
+    icon: {fileID: 21300000, guid: ed5982121a16dab4791cb7ccb5dfec18, type: 3}
     en: Theater
     vi: "R\u1EA1p H\xE1t"
     zh: "\u5267\u573A"
@@ -4029,6 +4122,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u30AA\u30FC\u30B1\u30B9\u30C8\u30E9"
     order: 9
+    icon: {fileID: 21300000, guid: 825d60d12588db54eb9a44a3a56ec729, type: 3}
     en: Orchestra
     vi: "D\xE0n Nh\u1EA1c"
     zh: "\u7BA1\u5F26\u4E50\u961F"
@@ -4072,6 +4166,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u30B3\u30F3\u30B5\u30FC\u30C8"
     order: 10
+    icon: {fileID: 21300000, guid: a06edf99ddef49043a18b8f382c305c7, type: 3}
     en: Concert
     vi: "Bu\u1ED5i H\xF2a Nh\u1EA1c"
     zh: "\u6F14\u594F\u4F1A"
@@ -4115,6 +4210,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u89B3\u5149"
     order: 1
+    icon: {fileID: 21300000, guid: 5662ffbde3aeb2b4f8c9e73a739e94c9, type: 3}
     en: Sightseeing
     vi: Tham Quan
     zh: "\u89C2\u5149"
@@ -4162,6 +4258,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u91CE\u5916\u6D3B\u52D5"
     order: 2
+    icon: {fileID: 21300000, guid: 6fe7fd43f753c4a459333c000f16872a, type: 3}
     en: Outdoor Activities
     vi: "Ho\u1EA1t \u0110\u1ED9ng Ngo\xE0i Tr\u1EDDi"
     zh: "\u6237\u5916\u6D3B\u52A8"
@@ -4209,6 +4306,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u6D77\u8FBA"
     order: 3
+    icon: {fileID: 21300000, guid: d4a3b1f7054959f4fa636425b8ebf056, type: 3}
     en: Beach
     vi: "B\xE3i Bi\u1EC3n"
     zh: "\u6D77\u6EE9"
@@ -4252,6 +4350,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u30AD\u30E3\u30F3\u30D7"
     order: 4
+    icon: {fileID: 21300000, guid: 400254cff15d18840838929da2e51439, type: 3}
     en: Camping
     vi: "C\u1EAFm Tr\u1EA1i"
     zh: "\u91CE\u8425"
@@ -4295,6 +4394,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u5A2F\u697D\u5BB6\u96FB"
     order: 5
+    icon: {fileID: 21300000, guid: 7cae58e7dcd29634dbf57a45bd4cb7b0, type: 3}
     en: Home Entertainment
     vi: "Gi\u1EA3i Tr\xED Gia \u0110\xECnh"
     zh: "\u5BB6\u5EAD\u5A31\u4E50"
@@ -4339,6 +4439,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u5199\u771F"
     order: 6
+    icon: {fileID: 21300000, guid: 9ca618898536510438d04a316761ff72, type: 3}
     en: Photography
     vi: "Nhi\u1EBFp \u1EA2nh"
     zh: "\u6444\u5F71"
@@ -4382,6 +4483,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u30B2\u30FC\u30E0"
     order: 7
+    icon: {fileID: 21300000, guid: 71ea84c178138634581b3fc4b5e767d8, type: 3}
     en: Games
     vi: "Tr\xF2 Ch\u01A1i"
     zh: "\u6E38\u620F"
@@ -4425,6 +4527,7 @@ MonoBehaviour:
     topic_id: 13
     title: "\u7F8E\u8853\u3068\u5DE5\u82B8"
     order: 11
+    icon: {fileID: 21300000, guid: eb2c89f7f1238e04c96f454bc602f8a7, type: 3}
     en: Arts And Crafts
     vi: "Ngh\u1EC7 Thu\u1EADt V\xE0 Th\u1EE7 C\xF4ng"
     zh: "\u5DE5\u827A\u7F8E\u672F"
@@ -4469,6 +4572,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u5B87\u5B99\u7A7A\u9593"
     order: 6
+    icon: {fileID: 21300000, guid: 83d18efec5f44c645b49155ef3c8955d, type: 3}
     en: Space
     vi: "Kh\xF4ng Gian"
     zh: "\u7A7A\u95F4"
@@ -4512,6 +4616,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u5730\u7403"
     order: 5
+    icon: {fileID: 21300000, guid: 58e40d59c63fd514d9fe7f089220cda4, type: 3}
     en: Earth
     vi: "Tr\xE1i \u0110\u1EA5t"
     zh: "\u5730\u7403"
@@ -4555,6 +4660,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u5730\u52E2"
     order: 2
+    icon: {fileID: 21300000, guid: 91f8b6c1699af3b4aa275e7b6f328a7e, type: 3}
     en: Landscape
     vi: "Phong C\u1EA3nh"
     zh: "\u98CE\u666F"
@@ -4598,6 +4704,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u6C17\u8C61"
     order: 1
+    icon: {fileID: 21300000, guid: a761f273def16f84e8c8128d592523e0, type: 3}
     en: Weather
     vi: "Th\u1EDDi Ti\u1EBFt"
     zh: "\u5929\u6C14"
@@ -4642,6 +4749,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u5CA9\u77F3"
     order: 9
+    icon: {fileID: 21300000, guid: e2525415ab8743042b4a6823ccc2a682, type: 3}
     en: Rocks
     vi: "\u0110\xE1"
     zh: "\u5CA9\u77F3"
@@ -4685,6 +4793,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u9271\u77F3"
     order: 10
+    icon: {fileID: 21300000, guid: 015357f64bdc6b948a0087d3d5277cdc, type: 3}
     en: Minerals
     vi: "Kho\xE1ng Ch\u1EA5t"
     zh: "\u77FF\u7269"
@@ -4728,6 +4837,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u52D5\u7269"
     order: 4
+    icon: {fileID: 21300000, guid: 5c962e57d7768d44fb1a8d36a98b9066, type: 3}
     en: Animal
     vi: "\u0110\u1ED9ng V\u1EADt"
     zh: "\u52A8\u7269"
@@ -4771,6 +4881,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u690D\u7269"
     order: 3
+    icon: {fileID: 21300000, guid: 5d9c56c65336540438a0ad042cb6cdec, type: 3}
     en: Plants
     vi: "Th\u1EF1c V\u1EADt"
     zh: "\u690D\u7269"
@@ -4814,6 +4925,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u5E02\u8857"
     order: 7
+    icon: {fileID: 21300000, guid: ad8ad4fe34da90941aca64169a1b6765, type: 3}
     en: Town
     vi: "Th\xE0nh Ph\u1ED1"
     zh: "\u57CE\u9547"
@@ -4857,6 +4969,7 @@ MonoBehaviour:
     topic_id: 14
     title: "\u5EFA\u7BC9"
     order: 8
+    icon: {fileID: 21300000, guid: ee7f8dc8e4b27014eab3e3e4490d045a, type: 3}
     en: Architecture
     vi: "Ki\u1EBFn Tr\xFAc"
     zh: "\u5EFA\u7B51"
@@ -4900,6 +5013,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u6642\u9593"
     order: 2
+    icon: {fileID: 21300000, guid: d8420db377918fe43ba12cf1fe32e96a, type: 3}
     en: Time
     vi: "Th\u1EDDi Gian"
     zh: "\u65F6\u95F4"
@@ -4943,6 +5057,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u30AB\u30EC\u30F3\u30C0\u30FC"
     order: 3
+    icon: {fileID: 21300000, guid: ce53a10ceb2c87b4ea3f15a1c3266c97, type: 3}
     en: Calendar
     vi: "L\u1ECBch"
     zh: "\u65E5\u5386"
@@ -4986,6 +5101,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u6570\u5B57"
     order: 1
+    icon: {fileID: 21300000, guid: 3ba498382a7e58842bec702963fcd242, type: 3}
     en: Numbers
     vi: "S\u1ED1"
     zh: "\u6570\u5B57"
@@ -5029,6 +5145,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u8A08\u91CF"
     order: 5
+    icon: {fileID: 21300000, guid: f3817e6e95a76b14eae3e5c50a71b1f3, type: 3}
     en: Weights And Measures
     vi: "\u0110o L\u01B0\u1EDDng"
     zh: "\u5EA6\u91CF\u8861"
@@ -5072,6 +5189,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u4E16\u754C\u5730\u56F3"
     order: 4
+    icon: {fileID: 21300000, guid: 53b092d805e5b804e865f50ccfbaea40, type: 3}
     en: World Map
     vi: "B\u1EA3n \u0110\u1ED3 Th\u1EBF Gi\u1EDBi"
     zh: "\u4E16\u754C\u5730\u56FE"
@@ -5115,6 +5233,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u4E0D\u5909\u5316\u8A5E\u3068\u53CD\u7FA9\u8A9E"
     order: 7
+    icon: {fileID: 21300000, guid: 8d8425dc83a736d409a765c128fcbe78, type: 3}
     en: Particles And Antonyms
     vi: "B\u1EA5t Bi\u1EBFn V\xE0 Tr\xE1i Ngh\u0129a"
     zh: "\u5C0F\u54C1\u8BCD\u548C\u53CD\u4E49\u8BCD"
@@ -5160,6 +5279,7 @@ MonoBehaviour:
     topic_id: 15
     title: "\u4FBF\u5229\u306A\u8868\u73FE"
     order: 6
+    icon: {fileID: 21300000, guid: 88623e988752d064393b5ce116b6e250, type: 3}
     en: Useful Phrases
     vi: "C\u1EE5m T\u1EEB H\u1EEFu \xCDch"
     zh: "\u6709\u7528\u7684\u77ED\u8BED"
@@ -5204,6 +5324,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u65E5\u672C\u306E\u6599\u7406"
     order: 1
+    icon: {fileID: 21300000, guid: ee597be6c3ea74c4a8f4b8b3bee84111, type: 3}
     en: Japanese Cuisine
     vi: "\u1EA8m Th\u1EF1c Nh\u1EADt B\u1EA3n"
     zh: "\u65E5\u672C\u6599\u7406"
@@ -5248,6 +5369,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u65E5\u672C\u306E47\u90FD\u9053\u5E9C\u770C"
     order: 2
+    icon: {fileID: 21300000, guid: ca0d2edcdc9f26747afa3164f4c37829, type: 3}
     en: 47 Prefectures Of Japan
     vi: "C\xE1c T\u1EC9nh Th\xE0nh Nh\u1EADt B\u1EA3n"
     zh: "\u65E5\u672C47\u4E2A\u90FD\u9053\u5E9C\u53BF"
@@ -5293,6 +5415,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u304A\u796D\u308A"
     order: 3
+    icon: {fileID: 21300000, guid: b7ab5cee9b184dc429981a405d587350, type: 3}
     en: Japanese Festival
     vi: "L\u1EC5 H\u1ED9i"
     zh: "\u65E5\u672C\u8282\u65E5"
@@ -5336,6 +5459,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u65E5\u672C\u306E\u304A\u82B1"
     order: 4
+    icon: {fileID: 21300000, guid: cf7270819ca34444cb329b52a9db5f3e, type: 3}
     en: Flowers
     vi: "C\xE1c Lo\xE0i Hoa \u1EDE Nh\u1EADt B\u1EA3n"
     zh: "\u65E5\u672C\u82B1"
@@ -5379,6 +5503,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u65E5\u672C\u306E\u4F1D\u7D71\u7684\u306A\u30B9\u30DD\u30FC\u30C4"
     order: 0
+    icon: {fileID: 21300000, guid: cacceba90caafe64eb9c306dfa1e70b7, type: 3}
     en: Traditional Sport
     vi: "C\xE1c Th\u1EC3 Thao Truy\u1EC1n Th\xF4ng C\u1EE7a Nh\u1EADt B\u1EA3n"
     zh: "\u65E5\u672C\u4F20\u7EDF\u4F53\u80B2"
@@ -5424,6 +5549,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u65E5\u672C\u306E\u5B63\u7BC0"
     order: 0
+    icon: {fileID: 21300000, guid: 730bf51dd197557498a3fe1155bbbf23, type: 3}
     en: Season
     vi: "C\xE1c M\xF9a \u1EDE Nh\u1EADt B\u1EA3n"
     zh: "\u65E5\u672C\u5B63\u8282"
@@ -5467,6 +5593,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u65E5\u672C\u306E\u304A\u6B63\u6708"
     order: 0
+    icon: {fileID: 21300000, guid: 24395e65a16c72e45a9ae7bff679b85c, type: 3}
     en: Japanese New Year Eve
     vi: "Ng\xE0y T\u1EBFt \u1EDE Nh\u1EADt B\u1EA3n"
     zh: "\u65E5\u672C\u65B0\u5E74"
@@ -5515,6 +5642,7 @@ MonoBehaviour:
     topic_id: 2
     title: "\u7537\u6027\u670D"
     order: 2
+    icon: {fileID: 21300000, guid: bd90bfdf6eba9e848a1b8827210e18c7, type: 3}
     en: Clothing - Men
     vi: "Qu\u1EA7n \xC1o Nam"
     zh: "\u7537\u58EB\u670D\u88C5"
@@ -5559,6 +5687,7 @@ MonoBehaviour:
     topic_id: 2
     title: "\u5B50\u4F9B\u670D"
     order: 3
+    icon: {fileID: 21300000, guid: 51169885d5d9c9d48bf937032f7ea52f, type: 3}
     en: Clothing - Baby
     vi: "Qu\u1EA7n \xC1o Tr\u1EBB Em"
     zh: "\u513F\u7AE5\u670D\u88C5"
@@ -5604,6 +5733,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u30B7\u30FC\u30D5\u30FC\u30C9\u3001\u679C\u7269"
     order: 0
+    icon: {fileID: 21300000, guid: 2193446a19e1447439cb60de6298c3fa, type: 3}
     en: Seafood And Fruit
     vi: "\u0110\u1ED3 H\u1EA3i S\u1EA3n V\xE0 Tr\xE1i C\xE2y"
     zh: "\u6D77\u9C9C\u548C\u6C34\u679C"
@@ -5655,6 +5785,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u533B\u85AC"
     order: 0
+    icon: {fileID: 21300000, guid: c5424c71bc6eb6c48ace840d676460eb, type: 3}
     en: Medicine
     vi: "Nh\xE0 Thu\u1ED1c"
     zh: "\u533B\u5B66"
@@ -5699,6 +5830,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u89B3\u5149\u5730"
     order: 0
+    icon: {fileID: 21300000, guid: 351bd8d8a3a65d941ae81cb0e24440c7, type: 3}
     en: Attraction
     vi: "\u0110\u1ECBa \u0110i\u1EC3m Tham Quan"
     zh: "\u5F15\u529B"
@@ -5742,6 +5874,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u4EA4\u901A\u3001\u65C5\u884C"
     order: 0
+    icon: {fileID: 21300000, guid: 57a4e693785f4a441816baa626d61c63, type: 3}
     en: Transportation/ Travel In Japan
     vi: "Du L\u1ECBch, Giao Th\xF4ng"
     zh: "\u5728\u65E5\u672C\u7684\u4EA4\u901A/\u65C5\u884C"
@@ -5795,6 +5928,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u4FBF\u5229\u306A\u8868\u73FE"
     order: 0
+    icon: {fileID: 21300000, guid: 00981b62b152e7e4aa91dffc7abeb702, type: 3}
     en: Useful Phrases In Japan
     vi: "C\u1EE5m T\u1EEB H\u1EEFu \xCDch"
     zh: "\u5728\u65E5\u672C\u6709\u7528\u7684\u77ED\u8BED"
@@ -5847,6 +5981,7 @@ MonoBehaviour:
     topic_id: 16
     title: "\u5916\u98DF"
     order: 0
+    icon: {fileID: 21300000, guid: 823b2fdf7e2a20841bcbaa2bfcf9b0f3, type: 3}
     en: Eating Out
     vi: "\u0102n Ngo\xE0i"
     zh: "\u5916\u51FA\u5C31\u9910"

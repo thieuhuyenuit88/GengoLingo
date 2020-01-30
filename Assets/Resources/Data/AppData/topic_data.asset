@@ -16,6 +16,7 @@ MonoBehaviour:
   - id: 1
     title: "\u4EBA"
     order: 5
+    icon: {fileID: 21300000, guid: d32153f7141367e43a8fdc9fdb3ff0c9, type: 3}
     en: People
     vi: "Con Ng\u01B0\u1EDDi"
     zh: "\u4EBA"
@@ -58,6 +59,7 @@ MonoBehaviour:
   - id: 2
     title: "\u5916\u89B3"
     order: 12
+    icon: {fileID: 21300000, guid: 0bbd377016dd08b4291031b4d2b11093, type: 3}
     en: Appearance
     vi: "Ngo\u1EA1i H\xECnh"
     zh: "\u5916\u8C8C"
@@ -100,6 +102,7 @@ MonoBehaviour:
   - id: 3
     title: "\u5065\u5EB7"
     order: 14
+    icon: {fileID: 21300000, guid: 780b61160debe7342a56770707e19495, type: 3}
     en: Health
     vi: "S\u1EE9c Kh\u1ECFe"
     zh: "\u5065\u5EB7"
@@ -142,6 +145,7 @@ MonoBehaviour:
   - id: 4
     title: "\u5BB6\u5EAD"
     order: 10
+    icon: {fileID: 21300000, guid: b91da91036987fe46bf822aca0023a11, type: 3}
     en: Home
     vi: "Nh\xE0 C\u1EEDa"
     zh: "\u5BB6\u5EAD"
@@ -184,6 +188,7 @@ MonoBehaviour:
   - id: 5
     title: "\u8077\u52D9"
     order: 11
+    icon: {fileID: 21300000, guid: 2c6c302a505b6f34db52ea82d72b55c5, type: 3}
     en: Services
     vi: "D\u1ECBch V\u1EE5"
     zh: "\u670D\u52A1"
@@ -226,6 +231,7 @@ MonoBehaviour:
   - id: 6
     title: "\u8CB7\u3044\u7269"
     order: 3
+    icon: {fileID: 21300000, guid: d73e8ca6830be4844a9977cfb814a0db, type: 3}
     en: Shopping
     vi: "Mua S\u1EAFm"
     zh: "\u8D2D\u7269"
@@ -268,6 +274,7 @@ MonoBehaviour:
   - id: 7
     title: "\u98DF\u3079\u7269"
     order: 4
+    icon: {fileID: 21300000, guid: db6160c74ee1e124c844b489206f2a93, type: 3}
     en: Food
     vi: "Th\u1EE9c \u0102n"
     zh: "\u98DF\u7269"
@@ -310,6 +317,7 @@ MonoBehaviour:
   - id: 8
     title: "\u5916\u98DF"
     order: 2
+    icon: {fileID: 21300000, guid: 78853443088c0294c8bf18501ebe0711, type: 3}
     en: Eating out
     vi: "\u0102n Ngo\xE0i"
     zh: "\u5916\u98DF"
@@ -352,6 +360,7 @@ MonoBehaviour:
   - id: 9
     title: "\u5B66\u7FD2"
     order: 9
+    icon: {fileID: 21300000, guid: f28c03728fafdf44c8cfd838c4daa96d, type: 3}
     en: Study
     vi: "H\u1ECDc H\xE0nh"
     zh: "\u5B66\u4E60"
@@ -394,6 +403,7 @@ MonoBehaviour:
   - id: 10
     title: "\u4ED5\u4E8B"
     order: 8
+    icon: {fileID: 21300000, guid: ed1d8d7767a3ad543ba999b434faf50d, type: 3}
     en: Work
     vi: "Vi\u1EC7c L\xE0m"
     zh: "\u5DE5\u4F5C"
@@ -436,6 +446,7 @@ MonoBehaviour:
   - id: 11
     title: "\u4EA4\u901A"
     order: 13
+    icon: {fileID: 21300000, guid: b86f4b530cc565942b7bf60d425f1c7f, type: 3}
     en: Transportation
     vi: "Giao Th\xF4ng"
     zh: "\u4EA4\u901A"
@@ -478,6 +489,7 @@ MonoBehaviour:
   - id: 12
     title: "\u30B9\u30DD\u30FC\u30C4"
     order: 7
+    icon: {fileID: 21300000, guid: 9312e2660c1191d449b635f7b9c86c49, type: 3}
     en: Sports
     vi: "Th\u1EC3 Thao"
     zh: "\u4F53\u80B2\u8FD0\u52A8\u7684"
@@ -520,6 +532,7 @@ MonoBehaviour:
   - id: 13
     title: "\u5A2F\u697D"
     order: 6
+    icon: {fileID: 21300000, guid: dfb872261cc133b4e847eebdde2efdda, type: 3}
     en: Leisure
     vi: "Gi\u1EA3i Tr\xED"
     zh: "\u5A31\u4E50"
@@ -562,6 +575,7 @@ MonoBehaviour:
   - id: 14
     title: "\u74B0\u5883"
     order: 15
+    icon: {fileID: 21300000, guid: e6b9635e0654455408e940e1efdc34de, type: 3}
     en: Environment
     vi: "M\xF4i Tr\u01B0\u1EDDng"
     zh: "\u73AF\u5883"
@@ -604,6 +618,7 @@ MonoBehaviour:
   - id: 15
     title: "\u53C2\u8003\u8CC7\u6599"
     order: 16
+    icon: {fileID: 21300000, guid: d12ca602fa008cd47bbed3a13d1aba5a, type: 3}
     en: Reference
     vi: "T\xE0i Li\u1EC7u Tham Kh\u1EA3o"
     zh: "\u53C2\u8003\u6587\u732E"
@@ -646,6 +661,7 @@ MonoBehaviour:
   - id: 16
     title: "\u65E5\u672C\u306E\u7279\u5FB4"
     order: 1
+    icon: {fileID: 21300000, guid: 4ce93c2bdbda9e04fbefa0b3e1748b84, type: 3}
     en: About Japan
     vi: "V\u1EC1 Nh\u1EADt B\u1EA3n"
     zh: "\u5173\u4E8E\u65E5\u672C"

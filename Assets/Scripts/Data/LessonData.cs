@@ -10,6 +10,7 @@ public class LessonData : ScriptableObject
         public int topic_id;
         public string title;
         public int order;
+        public Sprite icon;
         public string en, vi, zh, fr, de, hi, ind, it, ko, ms, pt, ru, es, th, tl, ar, pl, hr, nl, el, hu, sv, cs, ro, bg, da, tr, fi, sl, fa, bn, uk, am, km, si, zu, sw, lo, no;
     }
 
