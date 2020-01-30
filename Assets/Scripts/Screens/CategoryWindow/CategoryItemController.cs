@@ -18,13 +18,22 @@ public class CategoryItemController : MonoBehaviour
 
     private List<LessonData.Lesson> listLessons = new List<LessonData.Lesson>();
 
+    private bool enableSubListAnimate;
+    public bool EnableSubListAnimate { get { return enableSubListAnimate; } set { enableSubListAnimate = value; } }
+
+    private TopicData.Topic topicData;
+
     private void Awake()
     {
+        EnableSubListAnimate = true;
         subCategoryListView.InitListView(0, OnSubCategoryListUpdate);
     }
 
     public void SetData(TopicData.Topic _data)
     {
+        topicData = _data;
+        if (topicData == null) return;
+
         categoryBannerItem.SetData(_data);
 
         listLessons = lessonData.mListLessons.Where(x => x.topic_id == _data.id).ToList();
@@ -38,7 +47,7 @@ public class CategoryItemController : MonoBehaviour
         if (_index < 0 || _index >= listLessons.Count) return null;
 
         LoopListViewItem2 itemObj = _listview.NewListViewItem(subCategoryItemOrigin.name);
-        itemObj.GetComponent<SubCategoryItem>().SetData(listLessons[_index]);
+        itemObj.GetComponent<SubCategoryItem>().SetData(listLessons[_index], EnableSubListAnimate);
 
         return itemObj;
     }
@@ -63,5 +72,11 @@ public class CategoryItemController : MonoBehaviour
                 contentTransform.localPosition.z
                 );
         }
+    }
+
+    public void ResetSubCategoryListView()
+    {
+        EnableSubListAnimate = false;
+        SubCategoryListView.MovePanelToItemIndex(0, 0);
     }
 }

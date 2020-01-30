@@ -14,13 +14,16 @@ public class MainCatergoryController : MonoBehaviour
 
     private List<TopicData.Topic> listTopics = null;
 
+    private int oldNearestItemIndex = int.MinValue;
+
     private void Start()
     {
         listTopics = topicData.mListTopics.OrderBy(x => x.order).ToList();
 
         LoopListViewInitParam initParam = LoopListViewInitParam.CopyDefaultInitParam();
-        initParam.mSnapVecThreshold = 99999;
+        initParam.mSnapVecThreshold = 99999f;
         initParam.mItemDefaultWithPaddingSize = 1080f;
+        initParam.mSnapFinishThreshold = 0.5f;
 
         catergoryListView.mOnBeginDragAction = OnBeginDrag;
         catergoryListView.mOnDragingAction = OnDraging;
@@ -54,7 +57,7 @@ public class MainCatergoryController : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             LoopListViewItem2 itemObj = catergoryListView.GetShownItemByIndex(i);
-            float diff = 1 - Mathf.Abs(itemObj.DistanceWithViewPortSnapCenter) / 1540f;
+            float diff = 1 - Mathf.Abs(itemObj.DistanceWithViewPortSnapCenter) / 1180f;
             diff = Mathf.Clamp(diff, 0.2f, 1f);
             CategoryItemController itemController = itemObj.GetComponent<CategoryItemController>();
             itemController.UpdateAnimation(diff, itemObj.DistanceWithViewPortSnapCenter);
@@ -63,33 +66,29 @@ public class MainCatergoryController : MonoBehaviour
 
     private void OnSnapNearestChanged(LoopListView2 _listView, LoopListViewItem2 _item)
     {
-        int index = _listView.GetIndexInShownItemList(_item);
+        int index = _listView.CurSnapNearestItemIndex;
+        _item.GetComponent<CategoryItemController>().EnableSubListAnimate = true;
 
-        LoopListViewItem2 prevItem = _listView.GetShownItemByIndex(index - 1);
-        if (prevItem != null)
+        if (index != oldNearestItemIndex)
         {
-            CategoryItemController itemController = prevItem.GetComponent<CategoryItemController>();
-            itemController.SubCategoryListView.MovePanelToItemIndex(0, 0);
-            itemController.SubCategoryListView.FinishSnapImmediately();
+            LoopListViewItem2 prevItem = _listView.GetShownItemByItemIndex(oldNearestItemIndex);
+            if (prevItem != null)
+            {
+                CategoryItemController itemController = prevItem.GetComponent<CategoryItemController>();
+                itemController.ResetSubCategoryListView();
+            }
         }
-
-        LoopListViewItem2 nextItem = _listView.GetShownItemByIndex(index + 1);
-        if (nextItem != null)
-        {
-            CategoryItemController itemController = nextItem.GetComponent<CategoryItemController>();
-            itemController.SubCategoryListView.MovePanelToItemIndex(0, 0);
-            itemController.SubCategoryListView.FinishSnapImmediately();
-        }
+        oldNearestItemIndex = index;
     }
 
     private void OnBeginDrag()
     {
-
+        // Do nothing
     }
 
     private void OnDraging()
     {
-
+        // Do nothing
     }
 
     private void OnEndDrag()

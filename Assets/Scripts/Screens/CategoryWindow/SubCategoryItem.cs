@@ -10,16 +10,21 @@ public class SubCategoryItem : MonoBehaviour
     [SerializeField] Text titleLabel = null;
     [SerializeField] Rectangle icon= null;
 
-    public void SetData(LessonData.Lesson _data)
+    public void SetData(LessonData.Lesson _data, bool _enableAnimate = true)
     {
         titleLabel.text = _data.title;
-        icon.Sprite = Resources.Load<Sprite>("Images/lesson_" + _data.id);
+        icon.sprite = _data.icon;
 
-        // scale animation when item created
-        RectTransform rTransform = transform as RectTransform;
-        rTransform.localScale = new Vector3(0.02f, 0.02f, 1f);
+        if (_enableAnimate)
+        {
+            // scale animation when item created
+            RectTransform rTransform = transform as RectTransform;
+            rTransform.localScale = new Vector3(0.02f, 0.02f, 1f);
 
-        var scale = rTransform.DOScale(new Vector3(1f, 1f, 1f), 0.25f).SetEase(Ease.Linear)
-            .SetUpdate(true);
+            var scale = rTransform.DOScale(new Vector3(1f, 1f, 1f), 0.25f).SetEase(Ease.Linear)
+                .SetUpdate(true)
+                .OnComplete(() => {
+                });
+        }
     }
 }
