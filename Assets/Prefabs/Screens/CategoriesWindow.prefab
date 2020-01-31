@@ -183,7 +183,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: c95a7fb271985414a8df1875cc26a628, type: 3}
     m_FontSize: 50
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleLabel: {fileID: 7296392866830708212}
-  icon: {fileID: 774926415141253548}
+  icon: {fileID: 7626329986709282655}
 --- !u!1 &3880443720029144362
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   ShapeProperties:
     FillColor:
       serializedVersion: 2
-      rgba: 4288933612
+      rgba: 4294967295
     DrawFill: 1
     DrawFillShadow: 1
     DrawOutline: 0
@@ -996,8 +996,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147.5, y: 0}
-  m_SizeDelta: {x: 605, y: 80}
+  m_AnchoredPosition: {x: 177.9, y: 0}
+  m_SizeDelta: {x: 559.8, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4843434006635078753
 CanvasRenderer:
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: c95a7fb271985414a8df1875cc26a628, type: 3}
     m_FontSize: 50
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 50
@@ -1554,7 +1554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8780354215119846720}
   - component: {fileID: 4281528824908718549}
-  - component: {fileID: 774926415141253548}
+  - component: {fileID: 7626329986709282655}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -1579,7 +1579,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 20, y: 0}
-  m_SizeDelta: {x: 256, y: 256}
+  m_SizeDelta: {x: 320, y: 320}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4281528824908718549
 CanvasRenderer:
@@ -1589,7 +1589,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7329216766035413738}
   m_CullTransparentMesh: 0
---- !u!114 &774926415141253548
+--- !u!114 &7626329986709282655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7329216766035413738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a832df0d7bb845ec878cc0adac39c0f, type: 3}
+  m_Script: {fileID: 11500000, guid: 628d7d29024984117a9b515c9a8527a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1618,35 +1618,12 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294967295
     DrawOutlineShadow: 0
-  RoundedProperties:
-    Type: 1
-    ResolutionMode: 0
-    UniformRadius: 50
-    UseMaxRadius: 0
-    TLRadius: 15
-    TLResolution:
-      Resolution: 0
-      FixedResolution: 10
-      ResolutionMaxDistance: 4
-    TRRadius: 15
-    TRResolution:
-      Resolution: 0
-      FixedResolution: 10
-      ResolutionMaxDistance: 4
-    BRRadius: 15
-    BRResolution:
-      Resolution: 0
-      FixedResolution: 10
-      ResolutionMaxDistance: 4
-    BLRadius: 15
-    BLResolution:
-      Resolution: 0
-      FixedResolution: 10
-      ResolutionMaxDistance: 4
-    UniformResolution:
-      Resolution: 0
-      FixedResolution: 10
-      ResolutionMaxDistance: 4
+  EllipseProperties:
+    Fitting: 1
+    BaseAngle: 0
+    Resolution: 0
+    FixedResolution: 50
+    ResolutionMaxDistance: 4
   OutlineProperties:
     Type: 1
     LineWeight: 2
@@ -1655,11 +1632,17 @@ MonoBehaviour:
     ShowShadows: 1
     Angle: 0
     Distance: 0
-    Shadows: []
+    Shadows:
+    - Color:
+        serializedVersion: 2
+        rgba: 2013265920
+      Offset: {x: 0, y: 0}
+      Size: 5
+      Softness: 0.5
     Offset: {x: 0, y: -0}
   AntiAliasingProperties:
-    AntiAliasing: 2
-  Sprite: {fileID: 21300000, guid: 670bd260d966e81468bdf29f209ca41b, type: 3}
+    AntiAliasing: 5
+  Sprite: {fileID: 21300000, guid: 90d2897a40d898d42970d99bb45bb2cd, type: 3}
 --- !u!1 &7709691029573769789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,8 +1709,8 @@ MonoBehaviour:
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
-  m_DecelerationRate: 0.005
-  m_ScrollSensitivity: 1.3
+  m_DecelerationRate: 0.05
+  m_ScrollSensitivity: 1
   m_Viewport: {fileID: 8483120298790058677}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}

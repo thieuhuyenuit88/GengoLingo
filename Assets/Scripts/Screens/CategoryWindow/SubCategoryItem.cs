@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SubCategoryItem : MonoBehaviour
 {
     [SerializeField] Text titleLabel = null;
-    [SerializeField] Rectangle icon= null;
+    [SerializeField] Ellipse icon= null;
 
     public void SetData(LessonData.Lesson _data, bool _enableAnimate = true)
     {
