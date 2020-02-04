@@ -13,7 +13,7 @@ public class SubCategoryItem : MonoBehaviour
 
     public void SetData(LessonData.Lesson _data, bool _enableAnimate = true)
     {
-        titleLabel.text = _data.th;
+        titleLabel.text = _data.title;
         icon.sprite = _data.icon;
 
         if (_enableAnimate)
