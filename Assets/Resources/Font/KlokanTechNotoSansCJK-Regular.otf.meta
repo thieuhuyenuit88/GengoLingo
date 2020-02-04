@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 9b430ba8af2f090419688ca1f14dd8e9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: KlokanTech Noto Sans CJK
+  fontNames:
+  - KlokanTech Noto Sans CJK
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b99d219d2758e944ead9631283d7010c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

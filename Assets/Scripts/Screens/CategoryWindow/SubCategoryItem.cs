@@ -2,17 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using ThisOtherThing.UI.Shapes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SubCategoryItem : MonoBehaviour
 {
-    [SerializeField] Text titleLabel = null;
+    [SerializeField] TextMeshProUGUI titleLabel = null;
     [SerializeField] Ellipse icon= null;
 
     public void SetData(LessonData.Lesson _data, bool _enableAnimate = true)
     {
-        titleLabel.text = _data.title;
+        titleLabel.text = _data.th;
         icon.sprite = _data.icon;
 
         if (_enableAnimate)

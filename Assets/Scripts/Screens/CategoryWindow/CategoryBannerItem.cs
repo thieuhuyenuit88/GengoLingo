@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CategoryBannerItem : MonoBehaviour
 {
-    [SerializeField] Text m_TitleLabel = null;
+    [SerializeField] TextMeshProUGUI m_TitleLabel = null;
     [SerializeField] Rectangle icon = null;
     [SerializeField] GameObject m_ContentRoot = null;
 
@@ -15,7 +15,7 @@ public class CategoryBannerItem : MonoBehaviour
 
     public void SetData(TopicData.Topic _data)
     {
-        m_TitleLabel.text = _data.title;
+        m_TitleLabel.text = _data.th;
         icon.sprite = _data.icon;
     }
 }
