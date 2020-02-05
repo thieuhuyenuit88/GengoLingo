@@ -16,14 +16,14 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
             {
                 TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>(str);
                 string assetfile = str.Replace(".csv", ".asset");
-                LessonData gm = AssetDatabase.LoadAssetAtPath<LessonData>(assetfile);
+                LessonMaster gm = AssetDatabase.LoadAssetAtPath<LessonMaster>(assetfile);
                 if (gm == null)
                 {
-                    gm = new LessonData();
+                    gm = new LessonMaster();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
 
-                gm.mListLessons = CSVSerializer.Deserialize<LessonData.Lesson>(data.text);
+                gm.mListLessons = CSVSerializer.Deserialize<LessonMaster.Lesson>(data.text);
 
                 EditorUtility.SetDirty(gm);
                 AssetDatabase.SaveAssets();
@@ -35,14 +35,14 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
             {
                 TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>(str);
                 string assetfile = str.Replace(".csv", ".asset");
-                TopicData gm = AssetDatabase.LoadAssetAtPath<TopicData>(assetfile);
+                TopicMaster gm = AssetDatabase.LoadAssetAtPath<TopicMaster>(assetfile);
                 if (gm == null)
                 {
-                    gm = new TopicData();
+                    gm = new TopicMaster();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
 
-                gm.mListTopics = CSVSerializer.Deserialize<TopicData.Topic>(data.text);
+                gm.mListTopics = CSVSerializer.Deserialize<TopicMaster.Topic>(data.text);
 
                 EditorUtility.SetDirty(gm);
                 AssetDatabase.SaveAssets();

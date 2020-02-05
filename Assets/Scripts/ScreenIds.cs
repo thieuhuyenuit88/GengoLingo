@@ -21,6 +21,8 @@ namespace deVoid.UIFramework.Utils {
         
         public const string HomeWindow = "HomeWindow";
         
+        public const string MainMenuWindow = "MainMenuWindow";
+        
         public const string NavigationPanel = "NavigationPanel";
         
         public const string PlayerWindow = "PlayerWindow";

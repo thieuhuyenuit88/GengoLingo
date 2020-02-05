@@ -8,21 +8,28 @@ using UnityEngine;
 
 public class MainUIController : MonoBehaviour
 {
-    [SerializeField] private UISettings mainUISettings = null;
+    [SerializeField] private UISettings mMainUISettings = null;
+    [SerializeField] private TopicMaster mTopicMasterData = null;
+    [SerializeField] private LessonMaster mLessonMasterData = null;
 
-    private UIFrame mainUIFrame;
+    private UIFrame mMainUIManager;
 
     private void Awake()
     {
-        mainUIFrame = mainUISettings.CreateUIInstance();
+        mMainUIManager = mMainUISettings.CreateUIInstance();
+
         Signals.Get<TestWindow_ReloadSignal>().AddListener(ReloadTestWindow);
         Signals.Get<TestPopup_ShowSignal>().AddListener(ShowTestPopup);
+
+        Signals.Get<MainMenuWindow_ShowSignal>().AddListener(ShowMainMenuWindow);
     }
 
     private void OnDestroy()
     {
         Signals.Get<TestWindow_ReloadSignal>().RemoveListener(ReloadTestWindow);
         Signals.Get<TestPopup_ShowSignal>().RemoveListener(ShowTestPopup);
+
+        Signals.Get<MainMenuWindow_ShowSignal>().RemoveListener(ShowMainMenuWindow);
     }
 
     /// <summary>
@@ -30,21 +37,31 @@ public class MainUIController : MonoBehaviour
     /// </summary>
     private void ReloadTestWindow()
     {
-        mainUIFrame.OpenWindow(ScreenIds.TestWindow);
+        mMainUIManager.OpenWindow(ScreenIds.TestWindow);
     }
 
     /// <summary>
     /// Show test popup
     /// </summary>
-    /// <param name="testPopupData"></param>
+    /// <param name="_testPopupProperties"></param>
     private void ShowTestPopup(TestPopupProperties _testPopupProperties)
     {
-        mainUIFrame.OpenWindow(ScreenIds.TestPopup, _testPopupProperties);
+        mMainUIManager.OpenWindow(ScreenIds.TestPopup, _testPopupProperties);
+    }
+
+    /// <summary>
+    /// Open main menu window
+    /// </summary>
+    /// <param name="_properties"></param>
+    private void ShowMainMenuWindow(MainMenuWindowProperties _properties)
+    {
+        mMainUIManager.OpenWindow(ScreenIds.MainMenuWindow, _properties);
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-        mainUIFrame.OpenWindow(ScreenIds.CategoriesWindow);
+        mMainUIManager.OpenWindow(ScreenIds.CategoriesWindow, 
+            new CategoryWindowProperties(mTopicMasterData, mLessonMasterData));
     }
 }

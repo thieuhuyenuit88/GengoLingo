@@ -163,7 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03ce2c8550c29b408383e2ed90299d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainUISettings: {fileID: 11400000, guid: 3986535f4d1834d468538960a3b88c74, type: 2}
+  mMainUISettings: {fileID: 11400000, guid: 3986535f4d1834d468538960a3b88c74, type: 2}
+  mTopicMasterData: {fileID: 11400000, guid: 9b7116d44716aec4bb334ae4b0ccb30d, type: 2}
+  mLessonMasterData: {fileID: 11400000, guid: 93930d0e4b517a84ca6bdcef958e639a, type: 2}
 --- !u!1 &2034144050
 GameObject:
   m_ObjectHideFlags: 0

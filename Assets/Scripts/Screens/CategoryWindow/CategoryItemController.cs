@@ -9,45 +9,44 @@ using UnityEngine.UI;
 
 public class CategoryItemController : MonoBehaviour
 {
-    [SerializeField] private CategoryBannerItem categoryBannerItem = null;
-    [SerializeField] private LoopListView2 subCategoryListView = null;
-    [SerializeField] private GameObject subCategoryItemOrigin = null;
-    [SerializeField] private LessonData lessonData = null;
+    [SerializeField] private CategoryBannerItem mCategoryBannerItem = null;
+    [SerializeField] private LoopListView2 mSubCategoryListView = null;
+    [SerializeField] private GameObject mSubCategoryItemOrigin = null;
 
-    public LoopListView2 SubCategoryListView { get { return subCategoryListView; } }
+    public LoopListView2 SubCategoryListView { get { return mSubCategoryListView; } }
 
-    private List<LessonData.Lesson> listLessons = new List<LessonData.Lesson>();
+    private bool mEnableSubListAnimate;
+    public bool EnableSubListAnimate { get { return mEnableSubListAnimate; } set { mEnableSubListAnimate = value; } }
 
-    private bool enableSubListAnimate;
-    public bool EnableSubListAnimate { get { return enableSubListAnimate; } set { enableSubListAnimate = value; } }
-
-    private TopicData.Topic topicData;
+    private TopicMaster.Topic mTopicData = null;
+    private List<LessonMaster.Lesson> mListLessons = null;
 
     private void Awake()
     {
         EnableSubListAnimate = true;
-        subCategoryListView.InitListView(0, OnSubCategoryListUpdate);
+        mSubCategoryListView.InitListView(0, OnSubCategoryListUpdate);
     }
 
-    public void SetData(TopicData.Topic _data)
+    public void SetData(TopicMaster.Topic _topic, LessonMaster _lessonData)
     {
-        topicData = _data;
-        if (topicData == null) return;
+        mTopicData = _topic;
+        if (mTopicData == null) return;
 
-        categoryBannerItem.SetData(_data);
+        mCategoryBannerItem.SetData(_topic);
+        
+        mListLessons = _lessonData.mListLessons.Where(x => x.topic_id == _topic.id).ToList();
+        mListLessons = mListLessons.OrderBy(x => x.order).ToList();
 
-        listLessons = lessonData.mListLessons.Where(x => x.topic_id == _data.id).ToList();
-        listLessons = listLessons.OrderBy(x => x.order).ToList();
-
-        subCategoryListView.SetListItemCount(listLessons.Count, true);
+        mSubCategoryListView.SetListItemCount(mListLessons.Count, true);
     }
 
     private LoopListViewItem2 OnSubCategoryListUpdate(LoopListView2 _listview, int _index)
     {
-        if (_index < 0 || _index >= listLessons.Count) return null;
+        if (mListLessons == null) return null;
+        if (_index < 0 || _index >= mListLessons.Count) return null;
 
-        LoopListViewItem2 itemObj = _listview.NewListViewItem(subCategoryItemOrigin.name);
-        itemObj.GetComponent<SubCategoryItem>().SetData(listLessons[_index], EnableSubListAnimate);
+        LoopListViewItem2 itemObj = _listview.NewListViewItem(mSubCategoryItemOrigin.name);
+        itemObj.GetComponent<SubCategoryItem>().SetData(mListLessons[_index], EnableSubListAnimate);
 
         return itemObj;
     }
@@ -55,14 +54,14 @@ public class CategoryItemController : MonoBehaviour
     public void UpdateAnimation(float _diff, float distanceWithCenter)
     {
         float bannerDiff = Mathf.Clamp(_diff, 0.9f, 1f);
-        categoryBannerItem.ContentRootObj.GetComponent<CanvasGroup>().alpha = Mathf.Clamp(_diff, 0.6f, 1f);
-        categoryBannerItem.ContentRootObj.transform.localScale = new Vector3(bannerDiff, bannerDiff, 1f);
+        mCategoryBannerItem.ContentRootObj.GetComponent<CanvasGroup>().alpha = Mathf.Clamp(_diff, 0.6f, 1f);
+        mCategoryBannerItem.ContentRootObj.transform.localScale = new Vector3(bannerDiff, bannerDiff, 1f);
 
-        subCategoryListView.UpdateAllShownItemSnapData();
-        int count = subCategoryListView.ShownItemCount;
+        mSubCategoryListView.UpdateAllShownItemSnapData();
+        int count = mSubCategoryListView.ShownItemCount;
         for (int i = 0; i < count; i++)
         {
-            LoopListViewItem2 subCategoryItem = subCategoryListView.GetShownItemByIndex(i);
+            LoopListViewItem2 subCategoryItem = mSubCategoryListView.GetShownItemByIndex(i);
             subCategoryItem.GetComponentInChildren<CanvasGroup>().alpha = _diff;
             Transform contentTransform = subCategoryItem.transform.Find("ContentObj").transform;
             contentTransform.localScale = new Vector3(_diff, 1f, 1f);

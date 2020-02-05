@@ -571,8 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bc08ec82d458d4e8161768e80c7f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleLabel: {fileID: 6769465257171933839}
-  icon: {fileID: 7626329986709282655}
+  mTitleLabel: {fileID: 6769465257171933839}
+  mIcon: {fileID: 7626329986709282655}
 --- !u!1 &3482698215753962910
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +870,18 @@ MonoBehaviour:
       m_Calls: []
   onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8993032338463582492}
+        m_MethodName: UI_BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4048148667084166297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,9 +1405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d171722162e45df428c75432e68e3259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TitleLabel: {fileID: 745958567620301974}
-  icon: {fileID: 8628716497157510951}
-  m_ContentRoot: {fileID: 461259350785384820}
+  mTitleLabel: {fileID: 745958567620301974}
+  mIcon: {fileID: 8628716497157510951}
+  mContentRoot: {fileID: 461259350785384820}
 --- !u!1 &6507835078653512150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,10 +1466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851a6fcb1a404494b951b59d4f444a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  categoryBannerItem: {fileID: 7694164364705662663}
-  subCategoryListView: {fileID: 3523231893977006014}
-  subCategoryItemOrigin: {fileID: 2973710830383609606}
-  lessonData: {fileID: 11400000, guid: 93930d0e4b517a84ca6bdcef958e639a, type: 2}
+  mCategoryBannerItem: {fileID: 7694164364705662663}
+  mSubCategoryListView: {fileID: 3523231893977006014}
+  mSubCategoryItemOrigin: {fileID: 2973710830383609606}
 --- !u!1 &6865555017450114647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,9 +1732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a26a74fbd227846a1c45fdbd903805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catergoryListView: {fileID: 5439885081019988564}
-  categoryItemOrigin: {fileID: 6507835078653512150}
-  topicData: {fileID: 11400000, guid: 9b7116d44716aec4bb334ae4b0ccb30d, type: 2}
+  mCatergoryListView: {fileID: 5439885081019988564}
+  mCategoryItemOrigin: {fileID: 6507835078653512150}
 --- !u!1 &7000333811101437560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2402,7 @@ MonoBehaviour:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
     isPopup: 0
+  mainCategoryController: {fileID: 151379117068048738}
 --- !u!114 &2397902891893136675
 MonoBehaviour:
   m_ObjectHideFlags: 0

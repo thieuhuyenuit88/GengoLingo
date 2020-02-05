@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class LessonData : ScriptableObject
+public class LessonMaster : ScriptableObject
 {
     [Serializable]
     public class Lesson

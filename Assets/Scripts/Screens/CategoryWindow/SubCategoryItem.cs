@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using deVoid.Utils;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using ThisOtherThing.UI.Shapes;
@@ -8,13 +9,18 @@ using UnityEngine.UI;
 
 public class SubCategoryItem : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI titleLabel = null;
-    [SerializeField] Ellipse icon= null;
+    [SerializeField] TextMeshProUGUI mTitleLabel = null;
+    [SerializeField] Ellipse mIcon= null;
 
-    public void SetData(LessonData.Lesson _data, bool _enableAnimate = true)
+    private LessonMaster.Lesson mLessonData;
+
+    public void SetData(LessonMaster.Lesson _data, bool _enableAnimate = true)
     {
-        titleLabel.text = _data.en;
-        icon.sprite = _data.icon;
+        mLessonData = _data;
+        if (mLessonData == null) return;
+        
+        mTitleLabel.text = _data.en;
+        mIcon.sprite = _data.icon;
 
         if (_enableAnimate)
         {
@@ -27,5 +33,11 @@ public class SubCategoryItem : MonoBehaviour
                 .OnComplete(() => {
                 });
         }
+    }
+
+    public void UI_BtnClick()
+    {
+        if (mLessonData == null) return;
+        Signals.Get<MainMenuWindow_ShowSignal>().Dispatch(new MainMenuWindowProperties(mLessonData));
     }
 }

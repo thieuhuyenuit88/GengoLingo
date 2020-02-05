@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class TopicData : ScriptableObject
+public class TopicMaster : ScriptableObject
 {
     [Serializable]
     public class Topic

@@ -54,13 +54,13 @@ public class CSVImportExampleFromWeb : Editor
         List<string[]> rows = CSVSerializer.ParseCSV(text);
         if (rows != null)
         {
-            TopicData gm = AssetDatabase.LoadAssetAtPath<TopicData>(assetfile);
+            TopicMaster gm = AssetDatabase.LoadAssetAtPath<TopicMaster>(assetfile);
             if (gm == null)
             {
-                gm = new TopicData();
+                gm = new TopicMaster();
                 AssetDatabase.CreateAsset(gm, assetfile);
             }
-            gm.mListTopics = CSVSerializer.Deserialize<TopicData.Topic>(rows);
+            gm.mListTopics = CSVSerializer.Deserialize<TopicMaster.Topic>(rows);
 
             EditorUtility.SetDirty(gm);
             AssetDatabase.SaveAssets();

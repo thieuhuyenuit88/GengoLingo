@@ -7,15 +7,15 @@ using UnityEngine.UI;
 
 public class CategoryBannerItem : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI m_TitleLabel = null;
-    [SerializeField] Rectangle icon = null;
-    [SerializeField] GameObject m_ContentRoot = null;
+    [SerializeField] TextMeshProUGUI mTitleLabel = null;
+    [SerializeField] Rectangle mIcon = null;
+    [SerializeField] GameObject mContentRoot = null;
 
-    public GameObject ContentRootObj { get {return m_ContentRoot; }}
+    public GameObject ContentRootObj { get {return mContentRoot; }}
 
-    public void SetData(TopicData.Topic _data)
+    public void SetData(TopicMaster.Topic _data)
     {
-        m_TitleLabel.text = _data.en;
-        icon.sprite = _data.icon;
+        mTitleLabel.text = _data.en;
+        mIcon.sprite = _data.icon;
     }
 }
