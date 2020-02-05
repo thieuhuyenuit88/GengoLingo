@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using Lean.Common;
 using Lean.Transition;
+using SuperScrollView;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -55,7 +56,10 @@ namespace Lean.Gui
 		[System.NonSerialized]
 		private ScrollRect parentScrollRect;
 
-		public override void OnPointerDown(PointerEventData eventData)
+        [System.NonSerialized]
+        private LoopListView2 parentLoopListView;
+
+        public override void OnPointerDown(PointerEventData eventData)
 		{
 			base.OnPointerDown(eventData);
 
@@ -98,7 +102,13 @@ namespace Lean.Gui
 			if (parentScrollRect != null)
 			{
 				parentScrollRect.OnBeginDrag(eventData);
-			}
+
+                parentLoopListView = parentScrollRect.GetComponent<LoopListView2>();
+                if (parentLoopListView != null)
+                {
+                    parentLoopListView.OnBeginDrag(eventData);
+                }
+            }
 		}
 
 		public void OnDrag(PointerEventData eventData)
@@ -118,7 +128,11 @@ namespace Lean.Gui
 			if (parentScrollRect != null)
 			{
 				parentScrollRect.OnDrag(eventData);
-			}
+                if (parentLoopListView != null)
+                {
+                    parentLoopListView.OnDrag(eventData);
+                }
+            }
 		}
 
 		public void OnEndDrag(PointerEventData eventData)
@@ -126,7 +140,11 @@ namespace Lean.Gui
 			if (parentScrollRect != null)
 			{
 				parentScrollRect.OnEndDrag(eventData);
-			}
+                if (parentLoopListView != null)
+                {
+                    parentLoopListView.OnEndDrag(eventData);
+                }
+            }
 		}
 
 		public void OnSubmit(BaseEventData eventData)
