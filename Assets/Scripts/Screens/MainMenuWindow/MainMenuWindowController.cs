@@ -26,22 +26,7 @@ public class MainMenuWindowController : AWindowController<MainMenuWindowProperti
 
     protected override void OnPropertiesSet()
     {
-        base.OnPropertiesSet();
+        //Properties.HideOnForegroundLost = false;
         mLessonData = Properties.mLessonData;
-    }
-
-    protected override void AddListeners()
-    {
-        OutTransitionFinished += OnOutAnimationFinished;
-    }
-
-    protected override void RemoveListeners()
-    {
-        OutTransitionFinished -= OnOutAnimationFinished;
-    }
-
-    private void OnOutAnimationFinished(IUIScreenController _screen)
-    {
-        // Do nothing
     }
 }

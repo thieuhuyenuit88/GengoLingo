@@ -71,15 +71,6 @@ namespace deVoid.UIFramework
                 windowHistory.Pop();
                 AddTransition(screen);
                 screen.Hide();
-
-                CurrentWindow = null;
-
-                if (windowQueue.Count > 0) {
-                    ShowNextInQueue();
-                }
-                else if (windowHistory.Count > 0) {
-                    ShowPreviousInHistory();
-                }
             }
             else {
                 Debug.LogError(
@@ -191,6 +182,19 @@ namespace deVoid.UIFramework
             var window = screen as IWindowController;
             if (window.IsPopup) {
                 priorityParaLayer.RefreshDarken();
+            }
+
+            if (CurrentWindow == screen)
+            {
+                CurrentWindow = null;
+                if (windowQueue.Count > 0)
+                {
+                    ShowNextInQueue();
+                }
+                else if (windowHistory.Count > 0)
+                {
+                    ShowPreviousInHistory();
+                }
             }
         }
 

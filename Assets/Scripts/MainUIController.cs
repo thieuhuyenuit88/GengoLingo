@@ -21,6 +21,7 @@ public class MainUIController : MonoBehaviour
         Signals.Get<TestWindow_ReloadSignal>().AddListener(ReloadTestWindow);
         Signals.Get<TestPopup_ShowSignal>().AddListener(ShowTestPopup);
 
+        Signals.Get<CategoryWindow_ShowSignal>().AddListener(ShowCategoryWindow);
         Signals.Get<MainMenuWindow_ShowSignal>().AddListener(ShowMainMenuWindow);
     }
 
@@ -29,7 +30,14 @@ public class MainUIController : MonoBehaviour
         Signals.Get<TestWindow_ReloadSignal>().RemoveListener(ReloadTestWindow);
         Signals.Get<TestPopup_ShowSignal>().RemoveListener(ShowTestPopup);
 
+        Signals.Get<CategoryWindow_ShowSignal>().RemoveListener(ShowCategoryWindow);
         Signals.Get<MainMenuWindow_ShowSignal>().RemoveListener(ShowMainMenuWindow);
+    }
+
+    private void ShowCategoryWindow()
+    {
+        mMainUIManager.OpenWindow(ScreenIds.CategoriesWindow,
+            new CategoryWindowProperties(mTopicMasterData, mLessonMasterData));
     }
 
     /// <summary>
@@ -61,7 +69,6 @@ public class MainUIController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        mMainUIManager.OpenWindow(ScreenIds.CategoriesWindow, 
-            new CategoryWindowProperties(mTopicMasterData, mLessonMasterData));
+        ShowCategoryWindow();
     }
 }

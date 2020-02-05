@@ -57,6 +57,6 @@ public class CategoryWindowController : AWindowController<CategoryWindowProperti
 
     private void OnOutAnimationFinished(IUIScreenController screen)
     {
-        // Do nothing
+
     }
 }
