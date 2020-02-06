@@ -26,7 +26,6 @@ public class MainMenuWindowController : AWindowController<MainMenuWindowProperti
 
     protected override void OnPropertiesSet()
     {
-        //Properties.HideOnForegroundLost = false;
         mLessonData = Properties.mLessonData;
     }
 }

@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class SubCategoryItem : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI mTitleLabel = null;
-    [SerializeField] Ellipse mIcon= null;
+    [SerializeField] Rectangle mIcon= null;
 
     private LessonMaster.Lesson mLessonData;
 

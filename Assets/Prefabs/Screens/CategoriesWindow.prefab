@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTitleLabel: {fileID: 6769465257171933839}
-  mIcon: {fileID: 7626329986709282655}
+  mIcon: {fileID: 7207181041372989144}
 --- !u!1 &3482698215753962910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,9 +1609,8 @@ GameObject:
   - component: {fileID: 8359742107228072270}
   - component: {fileID: 4902476080619276318}
   - component: {fileID: 1268418081569707016}
-  - component: {fileID: 7118490130043989049}
+  - component: {fileID: 4781763696943448272}
   - component: {fileID: 3851792999626516533}
-  - component: {fileID: 5121163477941993368}
   - component: {fileID: 151379117068048738}
   m_Layer: 5
   m_Name: MainCategoryContent
@@ -1669,7 +1668,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &7118490130043989049
+--- !u!114 &4781763696943448272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1708,18 +1707,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!225 &5121163477941993368
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6964791180791029247}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &151379117068048738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,7 +1920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8780354215119846720}
   - component: {fileID: 4281528824908718549}
-  - component: {fileID: 7626329986709282655}
+  - component: {fileID: 7207181041372989144}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -1968,7 +1955,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7329216766035413738}
   m_CullTransparentMesh: 0
---- !u!114 &7626329986709282655
+--- !u!114 &7207181041372989144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1977,7 +1964,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7329216766035413738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628d7d29024984117a9b515c9a8527a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a832df0d7bb845ec878cc0adac39c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1997,12 +1984,35 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294967295
     DrawOutlineShadow: 0
-  EllipseProperties:
-    Fitting: 0
-    BaseAngle: 0
-    Resolution: 0
-    FixedResolution: 50
-    ResolutionMaxDistance: 4
+  RoundedProperties:
+    Type: 1
+    ResolutionMode: 0
+    UniformRadius: 30
+    UseMaxRadius: 0
+    TLRadius: 15
+    TLResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    TRRadius: 15
+    TRResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    BRRadius: 15
+    BRResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    BLRadius: 15
+    BLResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    UniformResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
   OutlineProperties:
     Type: 1
     LineWeight: 2
@@ -2011,17 +2021,11 @@ MonoBehaviour:
     ShowShadows: 1
     Angle: 0
     Distance: 0
-    Shadows:
-    - Color:
-        serializedVersion: 2
-        rgba: 2013265920
-      Offset: {x: 0, y: 0}
-      Size: 5
-      Softness: 0.5
+    Shadows: []
     Offset: {x: 0, y: -0}
   AntiAliasingProperties:
-    AntiAliasing: 5
-  Sprite: {fileID: 21300000, guid: 90d2897a40d898d42970d99bb45bb2cd, type: 3}
+    AntiAliasing: 1.25
+  Sprite: {fileID: 0}
 --- !u!1 &7709691029573769789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,8 +2359,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6576624378686534147}
   - component: {fileID: 6289243716859423538}
-  - component: {fileID: 2397902891893136675}
-  - component: {fileID: 4422097340005915620}
+  - component: {fileID: 6709203956713851559}
+  - component: {fileID: 6374094124486159514}
+  - component: {fileID: 7055663097819017379}
   m_Layer: 5
   m_Name: CategoriesWindow
   m_TagString: Untagged
@@ -2396,14 +2401,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96659c4bba50b7f43bb4469cf1c10a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animIn: {fileID: 2397902891893136675}
-  animOut: {fileID: 4422097340005915620}
+  animIn: {fileID: 6709203956713851559}
+  animOut: {fileID: 6374094124486159514}
   properties:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
     isPopup: 0
   mainCategoryController: {fileID: 151379117068048738}
---- !u!114 &2397902891893136675
+--- !u!114 &6709203956713851559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2417,7 +2422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 0.5
   fadeOut: 0
---- !u!114 &4422097340005915620
+--- !u!114 &6374094124486159514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2431,6 +2436,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 0.5
   fadeOut: 1
+--- !u!225 &7055663097819017379
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550013591572835635}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9165254646207442087
 GameObject:
   m_ObjectHideFlags: 0

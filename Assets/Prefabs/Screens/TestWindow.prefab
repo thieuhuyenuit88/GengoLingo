@@ -112,9 +112,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2406402595572497207}
-  - component: {fileID: 2406402595572497210}
-  - component: {fileID: 2406402595572497209}
-  - component: {fileID: 8033886371543932830}
+  - component: {fileID: 3458462708205828474}
+  - component: {fileID: 7798784672368452474}
+  - component: {fileID: 3209564130702675436}
+  - component: {fileID: 765487665715709906}
   m_Layer: 5
   m_Name: Content(NestedCanvas)
   m_TagString: Untagged
@@ -144,7 +145,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &2406402595572497210
+--- !u!222 &3458462708205828474
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406402595572497206}
+  m_CullTransparentMesh: 0
+--- !u!223 &7798784672368452474
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +162,7 @@ Canvas:
   m_GameObject: {fileID: 2406402595572497206}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -165,7 +174,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2406402595572497209
+--- !u!114 &3209564130702675436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +196,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &8033886371543932830
+--- !u!114 &765487665715709906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -543,7 +552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleLabel: {fileID: 2502215519304987429}
-  itemBtn: {fileID: 4674317350248732491}
 --- !u!1 &4073279589610387467
 GameObject:
   m_ObjectHideFlags: 0
