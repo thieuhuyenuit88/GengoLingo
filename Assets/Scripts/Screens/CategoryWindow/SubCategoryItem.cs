@@ -38,6 +38,8 @@ public class SubCategoryItem : MonoBehaviour
     public void UI_BtnClick()
     {
         if (mLessonData == null) return;
-        Signals.Get<MainMenuWindow_ShowSignal>().Dispatch(new MainMenuWindowProperties(mLessonData));
+        Signals.Get<MainMenuWindow_ShowSignal>().Dispatch(new MainMenuWindowProperties(mLessonData,
+            null,
+            transform.GetComponent<RectTransform>()));
     }
 }

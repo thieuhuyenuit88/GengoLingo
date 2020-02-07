@@ -63,6 +63,7 @@ public class MainUIController : MonoBehaviour
     /// <param name="_properties"></param>
     private void ShowMainMenuWindow(MainMenuWindowProperties _properties)
     {
+        _properties.UICamera = mMainUIManager.UICamera;
         mMainUIManager.OpenWindow(ScreenIds.MainMenuWindow, _properties);
     }
 

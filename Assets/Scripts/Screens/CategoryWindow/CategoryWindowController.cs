@@ -26,8 +26,8 @@ public class CategoryWindowController : AWindowController<CategoryWindowProperti
 {
     [SerializeField] private MainCatergoryController mainCategoryController = null;
     
-    private TopicMaster topicMaster = null;
-    private LessonMaster lessonMaster = null;
+    private TopicMaster mTopicMaster = null;
+    private LessonMaster mLessonMaster = null;
 
     protected override void OnPropertiesSet()
     {
@@ -37,8 +37,8 @@ public class CategoryWindowController : AWindowController<CategoryWindowProperti
 
     private void OnDataUpdated(TopicMaster _topicData, LessonMaster _lessonData)
     {
-        topicMaster = _topicData;
-        lessonMaster = _lessonData;
+        mTopicMaster = _topicData;
+        mLessonMaster = _lessonData;
         if (mainCategoryController != null)
         {
             mainCategoryController.SetData(_topicData, _lessonData);

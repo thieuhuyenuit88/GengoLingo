@@ -862,7 +862,7 @@ MonoBehaviour:
   clickTransitions:
     speed: 0
     roots:
-    - {fileID: 625624989750151196}
+    - {fileID: 0}
     aliases: []
     targets: []
   onDown:

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3222694902606903268}
   - component: {fileID: 571591345859265172}
   - component: {fileID: 4077097695879553084}
-  - component: {fileID: 8707108629105160476}
+  - component: {fileID: 6409367042668119672}
   m_Layer: 5
   m_Name: MainMenuWindow
   m_TagString: Untagged
@@ -72,13 +72,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc55db92600695947a500e4c1f7cb392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animIn: {fileID: 8707108629105160476}
+  animIn: {fileID: 6409367042668119672}
   animOut: {fileID: 0}
   properties:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
     isPopup: 0
---- !u!114 &8707108629105160476
+    mUICamera: {fileID: 0}
+  mBackground: {fileID: 1490604709582537578}
+--- !u!114 &6409367042668119672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,15 +89,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6690157389514934618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba1e145d32ecc1418c1b103ff6a7b8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 912eb93db71d4044ab1186fb3cd72cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOutAnimation: 0
-  duration: 0.5
-  doFade: 0
-  fadeDurationPercent: 0.5
+  durationWidth: 0.1
+  durationHeight: 0.25
   ease: 1
-  xYSplit: 0.25
 --- !u!1 &7483695188209624309
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +213,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7280360951890417004}
   - component: {fileID: 5695485510890544231}
-  - component: {fileID: 4713629336481462108}
+  - component: {fileID: 1490604709582537578}
+  - component: {fileID: 2290171061112727998}
   - component: {fileID: 4477853577131040862}
   m_Layer: 5
   m_Name: Background
@@ -250,7 +250,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8032953340872432369}
   m_CullTransparentMesh: 0
---- !u!114 &4713629336481462108
+--- !u!114 &1490604709582537578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,25 +259,84 @@ MonoBehaviour:
   m_GameObject: {fileID: 8032953340872432369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a832df0d7bb845ec878cc0adac39c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5283019, g: 0.51085794, b: 0.51085794, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 432b6131893641046b7f254718e197c1, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  ShapeProperties:
+    FillColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    DrawFill: 1
+    DrawFillShadow: 1
+    DrawOutline: 0
+    OutlineColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    DrawOutlineShadow: 0
+  RoundedProperties:
+    Type: 1
+    ResolutionMode: 0
+    UniformRadius: 0
+    UseMaxRadius: 0
+    TLRadius: 15
+    TLResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    TRRadius: 15
+    TRResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    BRRadius: 15
+    BRResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    BLRadius: 15
+    BLResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+    UniformResolution:
+      Resolution: 0
+      FixedResolution: 10
+      ResolutionMaxDistance: 4
+  OutlineProperties:
+    Type: 1
+    LineWeight: 2
+  ShadowProperties:
+    ShowShape: 1
+    ShowShadows: 1
+    Angle: 0
+    Distance: 0
+    Shadows: []
+    Offset: {x: 0, y: -0}
+  AntiAliasingProperties:
+    AntiAliasing: 1.25
+  Sprite: {fileID: 0}
+--- !u!114 &2290171061112727998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8032953340872432369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7121fd5e48b309b49b3e0afbba8960fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_color1: {r: 0.9254902, g: 0.43529412, b: 0.4, a: 1}
+  m_color2: {r: 0.9529412, g: 0.6313726, b: 0.5137255, a: 1}
+  m_angle: 90
+  m_ignoreRatio: 1
 --- !u!114 &4477853577131040862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +376,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 4713629336481462108}
+  m_TargetGraphic: {fileID: 1490604709582537578}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

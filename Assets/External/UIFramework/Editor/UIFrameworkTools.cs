@@ -37,6 +37,7 @@ namespace deVoid.UIFramework.Editor
             var uiLayer = LayerMask.NameToLayer("UI");
             var root = new GameObject("UIFrame");
             var camera = new GameObject("UICamera");
+            camera.tag = "UICamera";
 
             var aspectCam = camera.AddComponent<StableAspectCamera>();
             aspectCam.aspect = new Vector2(1080, 1920);

@@ -123,11 +123,11 @@ namespace Lean.Gui
 				var targetC = target.TransformPoint(min.x, max.y, 0.0f);
 				var targetD = target.TransformPoint(max.x, max.y, 0.0f);
 
-				var worldSpace     = target.GetComponentInParent<Canvas>().renderMode == RenderMode.WorldSpace;
-				var viewportPointA = WorldToViewportPoint(camera, targetA, worldSpace);
-				var viewportPointB = WorldToViewportPoint(camera, targetB, worldSpace);
-				var viewportPointC = WorldToViewportPoint(camera, targetC, worldSpace);
-				var viewportPointD = WorldToViewportPoint(camera, targetD, worldSpace);
+				var renderMode     = target.GetComponentInParent<Canvas>().renderMode;
+				var viewportPointA = WorldToViewportPoint(camera, targetA, renderMode);
+				var viewportPointB = WorldToViewportPoint(camera, targetB, renderMode);
+				var viewportPointC = WorldToViewportPoint(camera, targetC, renderMode);
+				var viewportPointD = WorldToViewportPoint(camera, targetD, renderMode);
 
 				// If outside frustum, hide line out of view
 				if (LeanGui.InvaidViewportPoint(camera, viewportPointA) == true || LeanGui.InvaidViewportPoint(camera, viewportPointB) == true ||
@@ -164,11 +164,18 @@ namespace Lean.Gui
 			return false;
 		}
 
-		private static Vector3 WorldToViewportPoint(Camera camera, Vector3 point, bool worldSpace)
+		private static Vector3 WorldToViewportPoint(Camera camera, Vector3 point, RenderMode renderMode)
 		{
-			if (worldSpace == false)
+            if (renderMode == RenderMode.ScreenSpaceOverlay) // Overlay canvas takes up the full screen
+            {
+                point = RectTransformUtility.WorldToScreenPoint(null, point);
+                point.z = 0.5f;
+
+                return camera.ScreenToViewportPoint(point);
+            }
+			else if (renderMode == RenderMode.ScreenSpaceCamera)
 			{
-				point = RectTransformUtility.WorldToScreenPoint(null, point);
+				point = RectTransformUtility.WorldToScreenPoint(camera, point);
 				point.z = 0.5f;
 
 				return camera.ScreenToViewportPoint(point);
