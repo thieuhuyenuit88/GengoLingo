@@ -7,20 +7,22 @@ using deVoid.UIFramework;
 
 public class MainMenuWindowExpandTransition : ATransitionComponent
 {
-    [SerializeField] protected float durationWidth = 0.15f;
-    [SerializeField] protected float durationHeight = 0.15f;
-    [SerializeField] protected Ease ease = Ease.Linear;
+    [SerializeField] protected bool mIsOutAnimation = false;
+    [SerializeField] protected float mDurationWidth  = 0.15f;
+    [SerializeField] protected float mDurationHeight = 0.15f;
+    [SerializeField] protected Ease mEase = Ease.Linear;
 
     public override void Animate(Transform target, Action callWhenFinished)
     {
-        RectTransform rTransform = target as RectTransform;
-        CanvasGroup canvasGroup = rTransform.GetComponent<CanvasGroup>();
+        CanvasGroup canvasGroup = target.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
         {
-            canvasGroup = rTransform.gameObject.AddComponent<CanvasGroup>();
+            canvasGroup = target.gameObject.AddComponent<CanvasGroup>();
         }
 
-        MainMenuWindowController controller = rTransform.GetComponent<MainMenuWindowController>();
+        MainMenuWindowController controller = target.GetComponent<MainMenuWindowController>();
+        RectTransform rTransform = controller.Background.GetComponent<RectTransform>();
+
         var uiCamera = controller.UICamera;
         var rootTargetTransform = controller.RootTargetTransform;
 
@@ -64,46 +66,90 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
             var canvasX = (canvasXA + canvasXB) * 0.5f;
             var canvasY = (canvasYA + canvasYB) * 0.5f;
 
-            rTransform.anchorMin = Vector2.zero;
-            rTransform.anchorMax = Vector2.one;
-            rTransform.position = canvasRectTransform.TransformPoint(canvasX, canvasY, 0.0f);
-            rTransform.SetOffset(canvasRect.width * minX,
-                canvasRect.height * (1f - maxY),
-                canvasRect.width * (1f - maxX),
-                canvasRect.height * minY);
+            if (!mIsOutAnimation)
+            {
+                rTransform.anchorMin = Vector2.zero;
+                rTransform.anchorMax = Vector2.one;
+                rTransform.position = canvasRectTransform.TransformPoint(canvasX, canvasY, 0.0f);
+                rTransform.SetOffset(canvasRect.width * minX,
+                    canvasRect.height * (1f - maxY),
+                    canvasRect.width * (1f - maxX),
+                    canvasRect.height * minY);
 
-            // Animation: set fit size to parent with tween
-            rTransform.DOKill();
-            float leftOffset = rTransform.offsetMin.x;
-            float botOffset = rTransform.offsetMin.y;
-            float rightOffset = -rTransform.offsetMax.x;
-            float topOffset = -rTransform.offsetMax.y;
-            controller.Background.RoundedProperties.UniformRadius = 50f;
+                // Animation: set fit size to parent with tween
+                rTransform.DOKill();
+                float leftOffset = rTransform.offsetMin.x;
+                float botOffset = rTransform.offsetMin.y;
+                float rightOffset = -rTransform.offsetMax.x;
+                float topOffset = -rTransform.offsetMax.y;
+                controller.Background.RoundedProperties.UniformRadius = 50f;
 
-            Sequence lrScaleSequence = DOTween.Sequence()
-                .Append(DOTween.To(() => leftOffset, value => leftOffset = value, 0f, durationWidth)
-                        .SetEase(ease)
-                        .OnUpdate(() => { rTransform.Left(leftOffset); }))
-                .Join(DOTween.To(() => rightOffset, value => rightOffset = value, 0f, durationWidth)
-                        .SetEase(ease)
-                        .OnUpdate(() => { rTransform.Right(rightOffset); }));
+                Sequence lrScaleSequence = DOTween.Sequence()
+                    .Append(DOTween.To(() => leftOffset, value => leftOffset = value, 0f, mDurationWidth)
+                            .SetEase(mEase)
+                            .OnUpdate(() => { rTransform.Left(leftOffset); }))
+                    .Join(DOTween.To(() => rightOffset, value => rightOffset = value, 0f, mDurationWidth)
+                            .SetEase(mEase)
+                            .OnUpdate(() => { rTransform.Right(rightOffset); }));
 
-            Sequence tbScaleSequence = DOTween.Sequence()
-                .Append(DOTween.To(() => topOffset, value => topOffset = value, 0f, durationHeight)
-                        .SetEase(ease)
-                        .OnUpdate(() => { rTransform.Top(topOffset); }))
-                .Join(DOTween.To(() => botOffset, value => botOffset = value, 0f, durationHeight)
-                        .SetEase(ease)
-                        .OnUpdate(() => { rTransform.Bottom(botOffset); }))
-                .Join(DOTween.To(() => controller.Background.RoundedProperties.UniformRadius, value => controller.Background.RoundedProperties.UniformRadius = value, 0f, durationHeight)
-                        .SetEase(ease));
+                Sequence tbScaleSequence = DOTween.Sequence()
+                    .Append(DOTween.To(() => topOffset, value => topOffset = value, 0f, mDurationHeight)
+                            .SetEase(mEase)
+                            .OnUpdate(() => { rTransform.Top(topOffset); }))
+                    .Join(DOTween.To(() => botOffset, value => botOffset = value, 0f, mDurationHeight)
+                            .SetEase(mEase)
+                            .OnUpdate(() => { rTransform.Bottom(botOffset); }))
+                    .Join(DOTween.To(() => controller.Background.RoundedProperties.UniformRadius, value => controller.Background.RoundedProperties.UniformRadius = value, 0f, mDurationHeight)
+                            .SetEase(mEase));
 
-            Sequence sequence = DOTween.Sequence();
-            sequence.Append(lrScaleSequence).Append(tbScaleSequence).OnComplete(
-                () => Cleanup(callWhenFinished, rTransform, canvasGroup)
-            ).SetUpdate(true);
+                Sequence sequence = DOTween.Sequence();
+                sequence.Append(lrScaleSequence).Append(tbScaleSequence).OnComplete(
+                    () => Cleanup(callWhenFinished, rTransform, canvasGroup)
+                ).SetUpdate(true);
 
-            sequence.Play();
+                sequence.Play();
+            }
+            else
+            {
+                // Zoom out
+                // Animation: set fit size to root target with tween
+                rTransform.DOKill();
+                float leftOffset = canvasRect.width * minX;
+                float botOffset = canvasRect.height * minY;
+                float rightOffset = canvasRect.width * (1f - maxX);
+                float topOffset = canvasRect.height * (1f - maxY);
+                controller.Background.RoundedProperties.UniformRadius = 0f;
+
+                canvasGroup.DOFade(0.5f, mDurationWidth + mDurationHeight).SetEase(Ease.InQuad)
+                    .OnComplete(() => {
+                        canvasGroup.alpha = 1f;
+                    });
+
+                Sequence lrScaleSequence = DOTween.Sequence()
+                    .Append(DOTween.To(() => 0f, value => rTransform.Left(value), leftOffset, mDurationWidth)
+                            .SetEase(mEase))
+                    .Join(DOTween.To(() => 0f, value => rTransform.Right(value), rightOffset, mDurationWidth)
+                            .SetEase(mEase));
+
+                Sequence tbScaleSequence = DOTween.Sequence()
+                    .Append(DOTween.To(() => 0f, value => rTransform.Top(value), topOffset, mDurationHeight)
+                            .SetEase(mEase))
+                    .Join(DOTween.To(() => 0f, value => rTransform.Bottom(value), botOffset, mDurationHeight)
+                            .SetEase(mEase))
+                    .Join(DOTween.To(() => 0f, value => controller.Background.RoundedProperties.UniformRadius = value, 50f, mDurationHeight)
+                            .SetEase(mEase));
+
+                Sequence sequence = DOTween.Sequence();
+                sequence.Append(tbScaleSequence).Append(lrScaleSequence).OnComplete(
+                    () => {
+                        rTransform.SetOffset(leftOffset, topOffset, rightOffset, botOffset);
+                        
+                        callWhenFinished();
+                    }
+                ).SetUpdate(true);
+
+                sequence.Play();
+            }
         }
     }
 
@@ -139,7 +185,6 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
     private void Cleanup(Action callWhenFinished, RectTransform rTransform, CanvasGroup canvasGroup)
     {
         callWhenFinished();
-        rTransform.localScale = Vector3.one;
         rTransform.SetOffset(0f, 0f, 0f, 0f);
         if (canvasGroup != null)
         {

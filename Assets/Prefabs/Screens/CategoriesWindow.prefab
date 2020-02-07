@@ -2359,7 +2359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6576624378686534147}
   - component: {fileID: 6289243716859423538}
-  - component: {fileID: 6709203956713851559}
+  - component: {fileID: 7150499911993732367}
   - component: {fileID: 6374094124486159514}
   - component: {fileID: 7055663097819017379}
   m_Layer: 5
@@ -2401,14 +2401,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96659c4bba50b7f43bb4469cf1c10a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animIn: {fileID: 6709203956713851559}
+  animIn: {fileID: 7150499911993732367}
   animOut: {fileID: 6374094124486159514}
   properties:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
     isPopup: 0
   mainCategoryController: {fileID: 151379117068048738}
---- !u!114 &6709203956713851559
+--- !u!114 &7150499911993732367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

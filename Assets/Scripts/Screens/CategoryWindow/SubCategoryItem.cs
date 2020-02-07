@@ -13,10 +13,12 @@ public class SubCategoryItem : MonoBehaviour
     [SerializeField] Rectangle mIcon= null;
 
     private LessonMaster.Lesson mLessonData;
+    private ScrollRect mScrollRect;
 
-    public void SetData(LessonMaster.Lesson _data, bool _enableAnimate = true)
+    public void SetData(LessonMaster.Lesson _data, ScrollRect _scrollRect, bool _enableAnimate = true)
     {
         mLessonData = _data;
+        mScrollRect = _scrollRect;
         if (mLessonData == null) return;
         
         mTitleLabel.text = _data.en;
@@ -38,6 +40,12 @@ public class SubCategoryItem : MonoBehaviour
     public void UI_BtnClick()
     {
         if (mLessonData == null) return;
+        if (mScrollRect != null)
+        {
+            mScrollRect.StopMovement();
+        }
+
+        // Show main menu window
         Signals.Get<MainMenuWindow_ShowSignal>().Dispatch(new MainMenuWindowProperties(mLessonData,
             null,
             transform.GetComponent<RectTransform>()));

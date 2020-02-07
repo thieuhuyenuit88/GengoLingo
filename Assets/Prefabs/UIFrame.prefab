@@ -506,7 +506,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3238111362008383974}
   - component: {fileID: 7874057041211495143}
-  - component: {fileID: 5208215297951864528}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: UICamera
@@ -571,16 +570,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &5208215297951864528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5454055171282583702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de96e54517b0c8a4d861494bd144221d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aspect: {x: 1080, y: 1920}

@@ -46,7 +46,7 @@ public class CategoryItemController : MonoBehaviour
         if (_index < 0 || _index >= mListLessons.Count) return null;
 
         LoopListViewItem2 itemObj = _listview.NewListViewItem(mSubCategoryItemOrigin.name);
-        itemObj.GetComponent<SubCategoryItem>().SetData(mListLessons[_index], EnableSubListAnimate);
+        itemObj.GetComponent<SubCategoryItem>().SetData(mListLessons[_index], _listview.ScrollRect, EnableSubListAnimate);
 
         return itemObj;
     }

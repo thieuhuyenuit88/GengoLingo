@@ -15,8 +15,12 @@ namespace deVoid.UIFramework {
         [SerializeField]
         protected bool isPopup = false;
 
+        [SerializeField]
+        protected bool waitOutTransitionAnimation = false;
+
         public WindowProperties() {
             hideOnForegroundLost = true;
+            waitOutTransitionAnimation = false;
             windowQueuePriority = WindowPriority.ForceForeground;
             isPopup = false;
         }
@@ -58,16 +62,27 @@ namespace deVoid.UIFramework {
             set { isPopup = value; }
         }
 
+        /// <summary>
+        /// Is waiting for out animation finished to go to next window
+        /// </summary>
+        /// /// <value><c>true</c> waiting for out animation finish to go next window; otherwise, <c>false</c>.</value>
+        public bool WaitOutTransitionAnimation {
+            get => waitOutTransitionAnimation;
+            set => waitOutTransitionAnimation = value;
+        }
+
         public WindowProperties(bool suppressPrefabProperties = false) {
             WindowQueuePriority = WindowPriority.ForceForeground;
             HideOnForegroundLost = false;
             SuppressPrefabProperties = suppressPrefabProperties;
+            WaitOutTransitionAnimation = false;
         }
 
-        public WindowProperties(WindowPriority priority, bool hideOnForegroundLost = false, bool suppressPrefabProperties = false) {
+        public WindowProperties(WindowPriority priority, bool hideOnForegroundLost = false, bool waitTransitionAnimation = false, bool suppressPrefabProperties = false) {
             WindowQueuePriority = priority;
             HideOnForegroundLost = hideOnForegroundLost;
             SuppressPrefabProperties = suppressPrefabProperties;
+            WaitOutTransitionAnimation = waitTransitionAnimation;
         }
     }
 }

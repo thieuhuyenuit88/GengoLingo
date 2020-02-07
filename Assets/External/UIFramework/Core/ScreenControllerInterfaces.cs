@@ -22,6 +22,7 @@ namespace deVoid.UIFramework {
     /// </summary>
     public interface IWindowController : IUIScreenController {
         bool HideOnForegroundLost { get; }
+        bool WaitOutTransitionAnimation { get; }
         bool IsPopup { get; }
         WindowPriority WindowPriority { get; }
     }

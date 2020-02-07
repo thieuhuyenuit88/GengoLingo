@@ -71,6 +71,19 @@ namespace deVoid.UIFramework
                 windowHistory.Pop();
                 AddTransition(screen);
                 screen.Hide();
+
+                if (!CurrentWindow.WaitOutTransitionAnimation)
+                {
+                    CurrentWindow = null;
+                    if (windowQueue.Count > 0)
+                    {
+                        ShowNextInQueue();
+                    }
+                    else if (windowHistory.Count > 0)
+                    {
+                        ShowPreviousInHistory();
+                    }
+                }
             }
             else {
                 Debug.LogError(
@@ -184,7 +197,7 @@ namespace deVoid.UIFramework
                 priorityParaLayer.RefreshDarken();
             }
 
-            if (CurrentWindow == screen)
+            if (CurrentWindow == screen && CurrentWindow.WaitOutTransitionAnimation)
             {
                 CurrentWindow = null;
                 if (windowQueue.Count > 0)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 571591345859265172}
   - component: {fileID: 4077097695879553084}
   - component: {fileID: 6409367042668119672}
+  - component: {fileID: 6999888806353967382}
   m_Layer: 5
   m_Name: MainMenuWindow
   m_TagString: Untagged
@@ -73,12 +74,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animIn: {fileID: 6409367042668119672}
-  animOut: {fileID: 0}
+  animOut: {fileID: 6999888806353967382}
   properties:
     hideOnForegroundLost: 1
     windowQueuePriority: 0
     isPopup: 0
-    mUICamera: {fileID: 0}
+    waitTransitionAnimation: 0
   mBackground: {fileID: 1490604709582537578}
 --- !u!114 &6409367042668119672
 MonoBehaviour:
@@ -92,9 +93,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912eb93db71d4044ab1186fb3cd72cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationWidth: 0.1
-  durationHeight: 0.25
-  ease: 1
+  mIsOutAnimation: 0
+  mDurationWidth: 0.15
+  mDurationHeight: 0.15
+  mEase: 1
+--- !u!114 &6999888806353967382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690157389514934618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912eb93db71d4044ab1186fb3cd72cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mIsOutAnimation: 1
+  mDurationWidth: 0.15
+  mDurationHeight: 0.15
+  mEase: 1
 --- !u!1 &7483695188209624309
 GameObject:
   m_ObjectHideFlags: 0

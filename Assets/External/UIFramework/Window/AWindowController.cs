@@ -26,6 +26,11 @@
             get { return Properties.WindowQueuePriority; }
         }
 
+        public bool WaitOutTransitionAnimation
+        {
+            get { return Properties.WaitOutTransitionAnimation; }
+        }
+
         /// <summary>
         /// Requests this Window to be closed, handy for rigging it directly in the Editor.
         /// I use the UI_ prefix to group all the methods that should be rigged in the Editor so that it's
@@ -44,6 +49,7 @@
                 // copy the default values to the passed in properties
                 if (!props.SuppressPrefabProperties) {
                     props.HideOnForegroundLost = Properties.HideOnForegroundLost;
+                    props.WaitOutTransitionAnimation = Properties.WaitOutTransitionAnimation;
                     props.WindowQueuePriority = Properties.WindowQueuePriority;
                     props.IsPopup = Properties.IsPopup;
                 }
