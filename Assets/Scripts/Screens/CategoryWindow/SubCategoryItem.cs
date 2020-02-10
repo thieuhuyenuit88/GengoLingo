@@ -21,7 +21,7 @@ public class SubCategoryItem : MonoBehaviour
         mScrollRect = _scrollRect;
         if (mLessonData == null) return;
         
-        mTitleLabel.text = _data.en;
+        mTitleLabel.text = _data.title + "\n" + _data.en;
         mIcon.sprite = _data.icon;
 
         if (_enableAnimate)

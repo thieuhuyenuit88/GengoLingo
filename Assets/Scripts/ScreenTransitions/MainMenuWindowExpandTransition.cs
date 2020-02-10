@@ -9,7 +9,7 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
 {
     [SerializeField] protected bool mIsOutAnimation = false;
     [SerializeField] protected float mDurationWidth  = 0.15f;
-    [SerializeField] protected float mDurationHeight = 0.15f;
+    [SerializeField] protected float mDurationHeight = 0.25f;
     [SerializeField] protected Ease mEase = Ease.Linear;
 
     public override void Animate(Transform target, Action callWhenFinished)
@@ -21,7 +21,7 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
         }
 
         MainMenuWindowController controller = target.GetComponent<MainMenuWindowController>();
-        RectTransform rTransform = controller.Background.GetComponent<RectTransform>();
+        RectTransform rTransform = controller.TopHeader.GetComponent<RectTransform>();
 
         var uiCamera = controller.UICamera;
         var rootTargetTransform = controller.RootTargetTransform;
@@ -82,7 +82,7 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
                 float botOffset = rTransform.offsetMin.y;
                 float rightOffset = -rTransform.offsetMax.x;
                 float topOffset = -rTransform.offsetMax.y;
-                controller.Background.RoundedProperties.UniformRadius = 50f;
+                controller.TopHeader.RoundedProperties.UniformRadius = 50f;
 
                 Sequence lrScaleSequence = DOTween.Sequence()
                     .Append(DOTween.To(() => leftOffset, value => leftOffset = value, 0f, mDurationWidth)
@@ -96,10 +96,10 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
                     .Append(DOTween.To(() => topOffset, value => topOffset = value, 0f, mDurationHeight)
                             .SetEase(mEase)
                             .OnUpdate(() => { rTransform.Top(topOffset); }))
-                    .Join(DOTween.To(() => botOffset, value => botOffset = value, 0f, mDurationHeight)
+                    .Join(DOTween.To(() => botOffset, value => botOffset = value, 1300f, mDurationHeight)
                             .SetEase(mEase)
                             .OnUpdate(() => { rTransform.Bottom(botOffset); }))
-                    .Join(DOTween.To(() => controller.Background.RoundedProperties.UniformRadius, value => controller.Background.RoundedProperties.UniformRadius = value, 0f, mDurationHeight)
+                    .Join(DOTween.To(() => controller.TopHeader.RoundedProperties.UniformRadius, value => controller.TopHeader.RoundedProperties.UniformRadius = value, 0f, mDurationHeight)
                             .SetEase(mEase));
 
                 Sequence sequence = DOTween.Sequence();
@@ -108,6 +108,12 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
                 ).SetUpdate(true);
 
                 sequence.Play();
+
+                TopHeaderController topHeader = controller.TopHeader.GetComponent<TopHeaderController>();
+                if (topHeader != null)
+                {
+                    topHeader.PlayOpenAnimation();
+                }
             }
             else
             {
@@ -118,10 +124,11 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
                 float botOffset = canvasRect.height * minY;
                 float rightOffset = canvasRect.width * (1f - maxX);
                 float topOffset = canvasRect.height * (1f - maxY);
-                controller.Background.RoundedProperties.UniformRadius = 0f;
+                controller.TopHeader.RoundedProperties.UniformRadius = 0f;
 
                 canvasGroup.DOFade(0.5f, mDurationWidth + mDurationHeight).SetEase(Ease.InQuad)
-                    .OnComplete(() => {
+                    .OnComplete(() =>
+                    {
                         canvasGroup.alpha = 1f;
                     });
 
@@ -134,21 +141,28 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
                 Sequence tbScaleSequence = DOTween.Sequence()
                     .Append(DOTween.To(() => 0f, value => rTransform.Top(value), topOffset, mDurationHeight)
                             .SetEase(mEase))
-                    .Join(DOTween.To(() => 0f, value => rTransform.Bottom(value), botOffset, mDurationHeight)
+                    .Join(DOTween.To(() => 1300f, value => rTransform.Bottom(value), botOffset, mDurationHeight)
                             .SetEase(mEase))
-                    .Join(DOTween.To(() => 0f, value => controller.Background.RoundedProperties.UniformRadius = value, 50f, mDurationHeight)
+                    .Join(DOTween.To(() => 0f, value => controller.TopHeader.RoundedProperties.UniformRadius = value, 50f, mDurationHeight)
                             .SetEase(mEase));
 
                 Sequence sequence = DOTween.Sequence();
                 sequence.Append(tbScaleSequence).Append(lrScaleSequence).OnComplete(
-                    () => {
+                    () =>
+                    {
                         rTransform.SetOffset(leftOffset, topOffset, rightOffset, botOffset);
-                        
+
                         callWhenFinished();
                     }
                 ).SetUpdate(true);
 
                 sequence.Play();
+
+                TopHeaderController topHeader = controller.TopHeader.GetComponent<TopHeaderController>();
+                if (topHeader != null)
+                {
+                    topHeader.PlayCloseAnimation();
+                }
             }
         }
     }
@@ -185,7 +199,7 @@ public class MainMenuWindowExpandTransition : ATransitionComponent
     private void Cleanup(Action callWhenFinished, RectTransform rTransform, CanvasGroup canvasGroup)
     {
         callWhenFinished();
-        rTransform.SetOffset(0f, 0f, 0f, 0f);
+        rTransform.SetOffset(0f, 0f, 0f, 1300f);
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 1f;

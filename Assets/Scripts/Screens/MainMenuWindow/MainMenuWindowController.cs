@@ -31,7 +31,7 @@ public class MainMenuWindow_ShowSignal : ASignal<MainMenuWindowProperties> { }
 
 public class MainMenuWindowController : AWindowController<MainMenuWindowProperties>
 {
-    [SerializeField] private Rectangle mBackground;
+    [SerializeField] private Rectangle mTopHeader;
 
     private LessonMaster.Lesson mLessonData;
     private Camera mUICamera;
@@ -40,12 +40,22 @@ public class MainMenuWindowController : AWindowController<MainMenuWindowProperti
     public LessonMaster.Lesson LessonData { get => mLessonData; set => mLessonData = value; }
     public Camera UICamera { get => mUICamera; set => mUICamera = value; }
     public RectTransform RootTargetTransform { get => mRootTargetTransform; set => mRootTargetTransform = value; }
-    public Rectangle Background { get => mBackground; set => mBackground = value; }
+    public Rectangle TopHeader { get => mTopHeader; set => mTopHeader = value; }
 
     protected override void OnPropertiesSet()
     {
         LessonData = Properties.mLessonData;
         UICamera = Properties.UICamera;
         RootTargetTransform = Properties.mRootTargetTransform;
+        UpdateData();
+    }
+
+    private void UpdateData()
+    {
+        TopHeaderController topHeader = mTopHeader.GetComponent<TopHeaderController>();
+        if (topHeader != null)
+        {
+            topHeader.SetData(LessonData);
+        }
     }
 }

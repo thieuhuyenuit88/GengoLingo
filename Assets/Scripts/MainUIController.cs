@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using deVoid.UIFramework;
 using deVoid.UIFramework.Utils;
 using deVoid.Utils;
+using DG.Tweening;
 using UnityEngine;
 
 public class MainUIController : MonoBehaviour
@@ -16,6 +17,7 @@ public class MainUIController : MonoBehaviour
 
     private void Awake()
     {
+        DOTween.Init(true, true, LogBehaviour.Default).SetCapacity(200, 10);
         mMainUIManager = mMainUISettings.CreateUIInstance();
 
         Signals.Get<TestWindow_ReloadSignal>().AddListener(ReloadTestWindow);
