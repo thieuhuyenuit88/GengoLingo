@@ -17,6 +17,7 @@ public class MainUIController : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         DOTween.Init(true, true, LogBehaviour.Default).SetCapacity(200, 10);
         mMainUIManager = mMainUISettings.CreateUIInstance();
 
