@@ -50,6 +50,25 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
                 Debug.Log("ReImported Asset: " + str);
 #endif
             }
+            if (str.IndexOf("/voca_data.csv") != -1)
+            {
+                TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>(str);
+                string assetfile = str.Replace(".csv", ".asset");
+                VocaMaster gm = AssetDatabase.LoadAssetAtPath<VocaMaster>(assetfile);
+                if (gm == null)
+                {
+                    gm = new VocaMaster();
+                    AssetDatabase.CreateAsset(gm, assetfile);
+                }
+
+                gm.mListVoca = CSVSerializer.Deserialize<VocaMaster.Voca>(data.text);
+
+                EditorUtility.SetDirty(gm);
+                AssetDatabase.SaveAssets();
+#if DEBUG_LOG || UNITY_EDITOR
+                Debug.Log("ReImported Asset: " + str);
+#endif
+            }
         }
     }
 }

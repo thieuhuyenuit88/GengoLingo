@@ -12,6 +12,7 @@ public class MainUIController : MonoBehaviour
     [SerializeField] private UISettings mMainUISettings = null;
     [SerializeField] private TopicMaster mTopicMasterData = null;
     [SerializeField] private LessonMaster mLessonMasterData = null;
+    [SerializeField] private VocaMaster mVocaMasterData = null;
 
     private UIFrame mMainUIManager;
 
