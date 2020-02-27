@@ -38,5 +38,7 @@ namespace deVoid.UIFramework.Utils {
         public const string ThreeDExample = "ThreeDExample";
         
         public const string ToastPanel = "ToastPanel";
+        
+        public const string VocaListWindow = "VocaListWindow";
     }
 }

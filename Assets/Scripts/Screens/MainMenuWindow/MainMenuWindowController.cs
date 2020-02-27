@@ -58,4 +58,12 @@ public class MainMenuWindowController : AWindowController<MainMenuWindowProperti
             topHeader.SetData(LessonData);
         }
     }
+
+    public void UI_VocaListBtnClick()
+    {
+        if (LessonData == null) return;
+
+        // Show vocabulary list window
+        Signals.Get<VocaListWindow_ShowSignal>().Dispatch(new VocaListWindowProperties(mLessonData, null));
+    }
 }

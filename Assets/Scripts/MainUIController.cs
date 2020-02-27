@@ -27,6 +27,7 @@ public class MainUIController : MonoBehaviour
 
         Signals.Get<CategoryWindow_ShowSignal>().AddListener(ShowCategoryWindow);
         Signals.Get<MainMenuWindow_ShowSignal>().AddListener(ShowMainMenuWindow);
+        Signals.Get<VocaListWindow_ShowSignal>().AddListener(ShowVocaListWindow);
     }
 
     private void OnDestroy()
@@ -36,6 +37,7 @@ public class MainUIController : MonoBehaviour
 
         Signals.Get<CategoryWindow_ShowSignal>().RemoveListener(ShowCategoryWindow);
         Signals.Get<MainMenuWindow_ShowSignal>().RemoveListener(ShowMainMenuWindow);
+        Signals.Get<VocaListWindow_ShowSignal>().RemoveListener(ShowVocaListWindow);
     }
 
     private void ShowCategoryWindow()
@@ -69,6 +71,16 @@ public class MainUIController : MonoBehaviour
     {
         _properties.UICamera = mMainUIManager.UICamera;
         mMainUIManager.OpenWindow(ScreenIds.MainMenuWindow, _properties);
+    }
+
+    /// <summary>
+    /// Open vocabulary list window
+    /// </summary>
+    /// <param name="_properties"></param>
+    private void ShowVocaListWindow(VocaListWindowProperties _properties)
+    {
+        _properties.VocaMasterData = mVocaMasterData;
+        mMainUIManager.OpenWindow(ScreenIds.VocaListWindow, _properties);
     }
 
     // Start is called before the first frame update

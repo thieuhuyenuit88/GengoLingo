@@ -166,6 +166,7 @@ MonoBehaviour:
   mMainUISettings: {fileID: 11400000, guid: 3986535f4d1834d468538960a3b88c74, type: 2}
   mTopicMasterData: {fileID: 11400000, guid: 9b7116d44716aec4bb334ae4b0ccb30d, type: 2}
   mLessonMasterData: {fileID: 11400000, guid: 93930d0e4b517a84ca6bdcef958e639a, type: 2}
+  mVocaMasterData: {fileID: 11400000, guid: 5e746132a5e935d42b29190c27b35567, type: 2}
 --- !u!1 &2034144050
 GameObject:
   m_ObjectHideFlags: 0
