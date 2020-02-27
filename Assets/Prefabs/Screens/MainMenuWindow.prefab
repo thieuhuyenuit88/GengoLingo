@@ -5563,7 +5563,7 @@ MonoBehaviour:
   animIn: {fileID: 6409367042668119672}
   animOut: {fileID: 6999888806353967382}
   properties:
-    hideOnForegroundLost: 1
+    hideOnForegroundLost: 0
     windowQueuePriority: 0
     isPopup: 0
     waitOutTransitionAnimation: 0

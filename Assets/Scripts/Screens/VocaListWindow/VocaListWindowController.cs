@@ -63,6 +63,7 @@ public class VocaListWindowController : AWindowController<VocaListWindowProperti
         if (!mIsInitCalled)
         {
             mVocaListView.InitListView(count, OnVocaListViewUpdate);
+            mIsInitCalled = true;
         }
         else
         {
