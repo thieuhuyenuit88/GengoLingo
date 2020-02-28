@@ -53,7 +53,6 @@ public class CategoryItemController : MonoBehaviour
 
     private void LateUpdate()
     {
-        EnableSubListAnimate = true;
         LoopListViewItem2 itemObj = gameObject.GetComponent<LoopListViewItem2>();
         if (Mathf.Abs(itemObj.DistanceWithViewPortSnapCenter) >= (itemObj.ItemSizeWithPadding - 50f))
         {

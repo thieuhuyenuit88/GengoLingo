@@ -22,6 +22,7 @@ public class FlashCardWindowController : AWindowController<VocaListWindowPropert
 
     private List<VocaMaster.Voca> mListVocas = null;
     private bool mIsInitCalled = false;
+    private int mOldNearestItemIndex = int.MinValue;
 
     public LessonMaster.Lesson LessonData { get => mLessonData; set => mLessonData = value; }
     public VocaMaster VocaMasterData { get => mVocaMasterData; set => mVocaMasterData = value; }
@@ -45,7 +46,6 @@ public class FlashCardWindowController : AWindowController<VocaListWindowPropert
         {
             LoopListViewInitParam initParam = LoopListViewInitParam.CopyDefaultInitParam();
             initParam.mSnapVecThreshold = 99999f;
-            initParam.mItemDefaultWithPaddingSize = 1080f;
             initParam.mSnapFinishThreshold = 0.5f;
 
             mFlashCardSnapListView.mOnEndDragAction = OnEndDrag;
