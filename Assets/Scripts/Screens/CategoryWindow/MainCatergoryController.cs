@@ -42,7 +42,7 @@ public class MainCatergoryController : MonoBehaviour
         mCatergoryListView.mOnBeginDragAction = OnBeginDrag;
         mCatergoryListView.mOnDragingAction = OnDraging;
         mCatergoryListView.mOnEndDragAction = OnEndDrag;
-        mCatergoryListView.mOnSnapNearestChanged = OnSnapNearestChanged;
+        // mCatergoryListView.mOnSnapNearestChanged = OnSnapNearestChanged;
 
         mCatergoryListView.InitListView(-1, OnCategoryListViewUpdate, initParam);
     }
@@ -80,6 +80,11 @@ public class MainCatergoryController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Not use!
+    /// </summary>
+    /// <param name="_listView"></param>
+    /// <param name="_item"></param>
     private void OnSnapNearestChanged(LoopListView2 _listView, LoopListViewItem2 _item)
     {
         int index = _listView.CurSnapNearestItemIndex;

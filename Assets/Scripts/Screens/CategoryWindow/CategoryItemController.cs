@@ -51,6 +51,23 @@ public class CategoryItemController : MonoBehaviour
         return itemObj;
     }
 
+    private void LateUpdate()
+    {
+        EnableSubListAnimate = true;
+        LoopListViewItem2 itemObj = gameObject.GetComponent<LoopListViewItem2>();
+        if (Mathf.Abs(itemObj.DistanceWithViewPortSnapCenter) >= (itemObj.ItemSizeWithPadding - 50f))
+        {
+            if (mSubCategoryListView.ContainerTrans.anchoredPosition3D.y > 0f)
+            {
+                ResetSubCategoryListView();
+            }
+        }
+        else
+        {
+            EnableSubListAnimate = true;
+        }
+    }
+
     public void UpdateAnimation(float _diff, float distanceWithCenter)
     {
         float bannerDiff = Mathf.Clamp(_diff, 0.9f, 1f);
