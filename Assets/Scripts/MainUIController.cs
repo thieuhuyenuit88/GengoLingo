@@ -28,6 +28,7 @@ public class MainUIController : MonoBehaviour
         Signals.Get<CategoryWindow_ShowSignal>().AddListener(ShowCategoryWindow);
         Signals.Get<MainMenuWindow_ShowSignal>().AddListener(ShowMainMenuWindow);
         Signals.Get<VocaListWindow_ShowSignal>().AddListener(ShowVocaListWindow);
+        Signals.Get<FlashCardWindow_ShowSignal>().AddListener(ShowFlashCardWindow);
     }
 
     private void OnDestroy()
@@ -38,6 +39,7 @@ public class MainUIController : MonoBehaviour
         Signals.Get<CategoryWindow_ShowSignal>().RemoveListener(ShowCategoryWindow);
         Signals.Get<MainMenuWindow_ShowSignal>().RemoveListener(ShowMainMenuWindow);
         Signals.Get<VocaListWindow_ShowSignal>().RemoveListener(ShowVocaListWindow);
+        Signals.Get<FlashCardWindow_ShowSignal>().RemoveListener(ShowFlashCardWindow);
     }
 
     private void ShowCategoryWindow()
@@ -81,6 +83,16 @@ public class MainUIController : MonoBehaviour
     {
         _properties.VocaMasterData = mVocaMasterData;
         mMainUIManager.OpenWindow(ScreenIds.VocaListWindow, _properties);
+    }
+
+    /// <summary>
+    /// Open Flash Card window
+    /// </summary>
+    /// <param name="_properties"></param>
+    private void ShowFlashCardWindow(VocaListWindowProperties _properties)
+    {
+        _properties.VocaMasterData = mVocaMasterData;
+        mMainUIManager.OpenWindow(ScreenIds.FlashCardWindow, _properties);
     }
 
     // Start is called before the first frame update

@@ -19,6 +19,8 @@ namespace deVoid.UIFramework.Utils {
         
         public const string ConfirmationPopup = "ConfirmationPopup";
         
+        public const string FlashCardWindow = "FlashCardWindow";
+        
         public const string HomeWindow = "HomeWindow";
         
         public const string MainMenuWindow = "MainMenuWindow";

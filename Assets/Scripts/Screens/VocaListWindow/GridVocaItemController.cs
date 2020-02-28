@@ -11,7 +11,7 @@ public class GridVocaItemController : MonoBehaviour
 
     public void Init()
     {
-       
+       // TODO: Add button/toggle event listener
     }
 
     public void SetItemData(VocaMaster.Voca _vocaData)

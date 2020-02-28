@@ -67,7 +67,8 @@ public class VocaListWindowController : AWindowController<VocaListWindowProperti
         }
         else
         {
-            mVocaListView.SetListItemCount(count, true);
+            mVocaListView.SetListItemCount(count, false);
+            mVocaListView.MovePanelToItemIndex(0, 0);
         }
     }
 

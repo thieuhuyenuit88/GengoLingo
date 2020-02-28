@@ -66,4 +66,12 @@ public class MainMenuWindowController : AWindowController<MainMenuWindowProperti
         // Show vocabulary list window
         Signals.Get<VocaListWindow_ShowSignal>().Dispatch(new VocaListWindowProperties(mLessonData, null));
     }
+
+    public void UI_FlashCardBtnClick()
+    {
+        if (LessonData == null) return;
+
+        // Show vocabulary list window
+        Signals.Get<FlashCardWindow_ShowSignal>().Dispatch(new VocaListWindowProperties(mLessonData, null));
+    }
 }

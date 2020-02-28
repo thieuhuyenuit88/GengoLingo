@@ -15,6 +15,8 @@ public class CategoryBannerItem : MonoBehaviour
 
     public void SetData(TopicMaster.Topic _data)
     {
+        if (_data == null) return;
+
         mTitleLabel.text = _data.title + "\n" + _data.en;
         mIcon.sprite = _data.icon;
     }
