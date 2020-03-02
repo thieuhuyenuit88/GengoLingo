@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 // EVENT
 public class FlashCardWindow_ShowSignal : ASignal<VocaListWindowProperties> { }
@@ -16,13 +17,27 @@ public class FlashCardWindowController : AWindowController<VocaListWindowPropert
     [SerializeField] private TextMeshProUGUI mTitleLabel = null;
     [SerializeField] private LoopListView2 mFlashCardSnapListView = null;
     [SerializeField] private GameObject mFlashCardItemOrigin = null;
+    [SerializeField] private Slider mProgressBar = null;
 
     private LessonMaster.Lesson mLessonData;
     private VocaMaster mVocaMasterData;
 
     private List<VocaMaster.Voca> mListVocas = null;
     private bool mIsInitCalled = false;
-    private int mOldNearestItemIndex = int.MinValue;
+
+    private float mCurrentProgress = 0f;
+    public float CurrentProgress
+    {
+        get
+        {
+            return mCurrentProgress;
+        }
+        set
+        {
+            mCurrentProgress = value;
+            mProgressBar.value = mCurrentProgress;
+        }
+    }
 
     public LessonMaster.Lesson LessonData { get => mLessonData; set => mLessonData = value; }
     public VocaMaster VocaMasterData { get => mVocaMasterData; set => mVocaMasterData = value; }
@@ -49,6 +64,7 @@ public class FlashCardWindowController : AWindowController<VocaListWindowPropert
             initParam.mSnapFinishThreshold = 0.5f;
 
             mFlashCardSnapListView.mOnEndDragAction = OnEndDrag;
+            mFlashCardSnapListView.mOnSnapNearestChanged = OnSnapNearestChanged;
 
             mFlashCardSnapListView.InitListView(mListVocas.Count, OnFlashCardSnapListViewUpdate);
             mIsInitCalled = true;
@@ -62,13 +78,11 @@ public class FlashCardWindowController : AWindowController<VocaListWindowPropert
 
     private LoopListViewItem2 OnFlashCardSnapListViewUpdate(LoopListView2 _listView, int _index)
     {
-        // if (_index < 0 || _index >= mListVocas.Count) return null;
+        if (_index < 0 || _index >= mListVocas.Count) return null;
         if (mListVocas == null) return null;
 
-        int itemCount = mListVocas.Count;
-        int actualyIndex = _index < 0 ? itemCount + ((_index + 1) % itemCount) - 1 : _index % itemCount;
         LoopListViewItem2 itemObj = _listView.NewListViewItem(mFlashCardItemOrigin.name);
-        VocaMaster.Voca vocaData = mListVocas[actualyIndex];
+        VocaMaster.Voca vocaData = mListVocas[_index];
         FlashCardItemController itemController = itemObj.GetComponent<FlashCardItemController>();
         itemController.SetItemData(vocaData);
 
@@ -89,6 +103,15 @@ public class FlashCardWindowController : AWindowController<VocaListWindowPropert
             float scale = Mathf.Clamp(diff, 0.85f, 1f);
             itemController.ContentObj.transform.localScale = new Vector3(scale, scale, 1f);
         }
+    }
+
+    private void OnSnapNearestChanged(LoopListView2 _listView, LoopListViewItem2 _item)
+    {
+        int curNearestItemIndex = _listView.CurSnapNearestItemIndex;
+        if (curNearestItemIndex < 0 || curNearestItemIndex >= mListVocas.Count) return;
+
+        float progressValue = (float)((curNearestItemIndex + 1)) / (float)(mListVocas.Count);
+        CurrentProgress = Mathf.Clamp(progressValue, 0f, 1f);
     }
 
     private void OnEndDrag()
