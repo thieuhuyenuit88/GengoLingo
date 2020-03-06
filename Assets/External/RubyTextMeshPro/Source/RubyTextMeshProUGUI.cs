@@ -31,7 +31,11 @@ namespace TMPro
         [TextArea(5, 10)]
         private string m_uneditedText;
         public string UnditedText {
-            set { m_uneditedText = value; }
+            get { return m_uneditedText; }
+            set {
+                m_uneditedText = value;
+                SetTextCustom(m_uneditedText);
+            }
         }
 
         private void SetTextCustom(string value)
@@ -50,7 +54,7 @@ namespace TMPro
         /// replace ruby tags.
         /// </summary>
         /// <param name="str"></param>
-        /// <returns>relpaced str</returns>
+        /// <returns>replaced str</returns>
         private string ReplaceRubyTags(string str)
         {
             if (string.IsNullOrEmpty(str)) return str;

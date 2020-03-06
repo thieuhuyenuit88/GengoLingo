@@ -13,8 +13,8 @@ public class FlashCardItemController : MonoBehaviour
     [SerializeField] LeanButton mButton = null;
     [SerializeField] GameObject mFrontObj = null;
     [SerializeField] GameObject mBackObj = null;
-    [SerializeField] TextMeshProUGUI mWordLabel = null;
-    [SerializeField] TextMeshProUGUI mMeanLabel = null;
+    [SerializeField] RubyTextMeshProUGUI mWordLabel = null;
+    [SerializeField] RubyTextMeshProUGUI mMeanLabel = null;
     [SerializeField] Image mIcon = null;
 
     [SerializeField] protected float mFlipTime = 0.25f;
@@ -53,8 +53,8 @@ public class FlashCardItemController : MonoBehaviour
     {
         if (_data == null) return;
 
-        mWordLabel.text = _data.word;
-        mMeanLabel.text = _data.word + "\n" + _data.en;
+        mWordLabel.UnditedText = "<ruby=" + _data.hiragana + ">" + _data.word + "</ruby>";
+        mMeanLabel.UnditedText = mWordLabel.UnditedText + "\n" + _data.en;
         mIcon.sprite = _data.icon;
 
         SetCardState(CardState.Front);
